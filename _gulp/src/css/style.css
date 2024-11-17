@@ -1171,7 +1171,7 @@ section {
 .meme_generator .left .top button.icon i.small {
   font-size: 1.65rem;
 }
-.meme_generator .left .meme {
+.meme_generator .left .meme img {
   float: left;
   padding: 0 30px 0 0;
 }
