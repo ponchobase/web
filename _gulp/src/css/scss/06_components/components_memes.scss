@@ -5,7 +5,20 @@
 /************************  *************************/
 
 .meme_generator {
-    background: #000;
+    .meme {
+        padding: 0 30px 0 0;
+    }
+
+    .gallery {
+        display: grid;
+        gap: 25px;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+
+        .active {
+            border: 5px solid var(--poncho_green);
+            border-radius: 5px;
+        }
+    }
 }
 
 /************************  *************************/

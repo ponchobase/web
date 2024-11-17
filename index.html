@@ -877,8 +877,13 @@
                     <!-- Content -->
                     <div class="header-content">
                         <div class="flexbox flexbox--vertical">
-                            <!-- Title -->
-                            <h2 class="h3 title">Create Poncho Memes</h2>
+                            <div>
+                                <!-- Title -->
+                                <h2 class="h3 title">Create Poncho Memes</h2>
+
+                                <!-- Description -->
+                                <p>Share your creations with the Poncho community through <a href="https://x.com/ponchoBASE" target="_blank">Twitter / X</a> and <a href="https://t.me/ponchoBASE" target="_blank">Telegram</a>.</p>
+                            </div>
                         </div>
 
                         <!-- Close -->
@@ -892,13 +897,37 @@
                     <div class="row meme_generator">
                         <div class="">
                             <!-- Left -->
-                            <div class="col-67">
-                                Image
+                            <div class="col-67 left">
+                                <img class="meme" src="/dist/img/memes/templates/poncho_template.png?v=2" alt="Poncho">
                             </div>
 
                             <!-- Left -->
-                            <div class="col-33">
-                                Options
+                            <div class="col-33 right">
+                                <!-- Accordions -->
+                                <div class="accordions margin--none-auto">
+                                    <!-- Accordions container -->
+                                    <div class="accordions__container">
+                                        <!-- Accordion -->
+                                        <div class="accordion margin--none-top">
+                                            <!-- Header -->
+                                            <h3 class="accordion__header">
+                                                <!-- Trigger -->
+                                                <button class="trigger" type="button" title="What is Poncho?" aria-expanded="false">
+                                                    <span class="title">Select Template</span>
+                                                    <i class="fas fa-chevron-down" aria-hidden="true"></i>
+                                                </button>
+                                            </h3>
+
+                                            <!-- Panel -->
+                                            <div class="accordion__panel" role="region" hidden="">
+                                                <!-- Meme templates -->
+                                                <div class="gallery">
+                                                    <img class="active" src="/dist/img/memes/templates/poncho_template.png?v=2" alt="Poncho">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
