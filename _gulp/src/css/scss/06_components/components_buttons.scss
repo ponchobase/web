@@ -21,12 +21,56 @@
         }
     }
 
+    &--blue-inverse {
+        background: none;
+        border: 2px solid var(--poncho_white);
+        color: var(--poncho_white);
+
+        &:hover {
+            background: var(--poncho_blue_hover);
+            color: var(--poncho_white);
+        }
+    }
+
+    &--green-inverse {
+        background: none;
+        border: 2px solid var(--poncho_white);
+        color: var(--poncho_white);
+
+        &:hover {
+            background: var(--poncho_green_hover);
+            color: var(--poncho_white);
+        }
+    }
+
     &--link {
         background: none;
         color: var(--poncho_white);
 
         &:hover {
             background: none;
+            color: var(--poncho_white);
+        }
+    }
+
+    &--orange-inverse {
+        background: none;
+        border: 2px solid var(--poncho_white);
+        color: var(--poncho_white);
+
+        &:hover {
+            background: var(--poncho_orange_hover);
+            color: var(--poncho_white);
+        }
+    }
+
+    &--red-inverse {
+        background: none;
+        border: 2px solid var(--poncho_white);
+        color: var(--poncho_white);
+
+        &:hover {
+            background: var(--poncho_red_hover);
             color: var(--poncho_white);
         }
     }

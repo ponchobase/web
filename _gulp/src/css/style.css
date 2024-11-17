@@ -9,11 +9,14 @@
   --poncho_blue_hover: #1d48ff;
   --poncho_blue_dark: #1d1a7a;
   --poncho_green: #14c85c;
+  --poncho_green_hover: #3ae07d;
   --poncho_grey: #eff2f5;
   --poncho_grey_dark: #545454;
   --poncho_orange: #ff9900;
+  --poncho_orange_hover: #ffa51f;
   --poncho_purple: #1d104c;
   --poncho_red: #e6453f;
+  --poncho_red_hover: #f25d57;
   --poncho_white: #fbffef;
 }
 
@@ -904,12 +907,48 @@ section {
   background: var(--poncho_blue_hover);
   color: var(--poncho_white);
 }
+.button--blue-inverse {
+  background: none;
+  border: 2px solid var(--poncho_white);
+  color: var(--poncho_white);
+}
+.button--blue-inverse:hover {
+  background: var(--poncho_blue_hover);
+  color: var(--poncho_white);
+}
+.button--green-inverse {
+  background: none;
+  border: 2px solid var(--poncho_white);
+  color: var(--poncho_white);
+}
+.button--green-inverse:hover {
+  background: var(--poncho_green_hover);
+  color: var(--poncho_white);
+}
 .button--link {
   background: none;
   color: var(--poncho_white);
 }
 .button--link:hover {
   background: none;
+  color: var(--poncho_white);
+}
+.button--orange-inverse {
+  background: none;
+  border: 2px solid var(--poncho_white);
+  color: var(--poncho_white);
+}
+.button--orange-inverse:hover {
+  background: var(--poncho_orange_hover);
+  color: var(--poncho_white);
+}
+.button--red-inverse {
+  background: none;
+  border: 2px solid var(--poncho_white);
+  color: var(--poncho_white);
+}
+.button--red-inverse:hover {
+  background: var(--poncho_red_hover);
   color: var(--poncho_white);
 }
 .button--transparent {
@@ -1117,7 +1156,23 @@ section {
 /************************  *************************/
 /* 	               Memes - Desktop   	           */
 /************************  *************************/
-.meme_generator .meme {
+.meme_generator .left .top {
+  margin: 0 auto 20px;
+  text-align: center;
+}
+.meme_generator .left .top button.icon {
+  border: none;
+  display: inline-block;
+  font-size: 2rem;
+  margin-top: 0;
+  transform: translateY(-1px);
+  transition: 150ms;
+}
+.meme_generator .left .top button.icon i.small {
+  font-size: 1.65rem;
+}
+.meme_generator .left .meme {
+  float: left;
   padding: 0 30px 0 0;
 }
 .meme_generator .gallery {
