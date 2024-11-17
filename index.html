@@ -876,7 +876,7 @@
 
                     <!-- Content -->
                     <div class="header-content">
-                        <div>
+                        <div class="flexbox flexbox--vertical">
                             <!-- Title -->
                             <h2 class="h3 title">Create Poncho Memes</h2>
                         </div>
@@ -888,7 +888,23 @@
 
                 <!-- Body -->
                 <div class="body">
-                    <canvas id="viewport" width="200" height="100" style="border:1px solid #000000;"></canvas>
+                    <!-- Meme generator -->
+                    <div class="row meme_generator">
+                        <div class="">
+                            <!-- Left -->
+                            <div class="col-67">
+                                Image
+                            </div>
+
+                            <!-- Left -->
+                            <div class="col-33">
+                                Options
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <!-- <canvas id="viewport" width="200" height="100" style="border:1px solid #000000;"></canvas>
                     <script>
                         var canvas = document.getElementById('viewport'),
                             context = canvas.getContext('2d');
@@ -917,7 +933,7 @@
                                 link.click();
                             }, 2000);
                         }
-                    </script>
+                    </script> -->
                 </div>
             </div>
         </div>

@@ -60,11 +60,13 @@ gulp.task("dist-js", () => {
         "./src/js/custom/_common/particles.js",
         "./src/js/custom/_common/scroll.js",
         "./src/js/custom/_common/swipers.js",
-        "./src/js/custom/_common/token.js"
+        "./src/js/custom/_common/token.js",
+        // Memes
+        "./src/js/custom/memes/meme_generator.js"
     ])
         .pipe(concat("poncho.min.js"))
         // .pipe(sourcemaps.init())
-        .pipe(uglify())
+        // .pipe(uglify())
         // .pipe(sourcemaps.write("."))
         .pipe(gulp.dest("../dist/js"));
 });

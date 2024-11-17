@@ -10,6 +10,7 @@ $(function () {
 
 function initialize_app() {
     try {
+        // Primary
         // Init accordions
         init_accordions();
 
@@ -31,17 +32,21 @@ function initialize_app() {
         // Init popstate
         init_popstate();
 
-        // Init swipers
-        init_swipers();
-        
         // Init scroll
         init_scroll();
+
+        // Init swipers
+        init_swipers();
 
         // Read token
         read_token(true);
 
         // Set read token interval
         set_read_token_interval();
+
+        // Secondary
+        // Init meme generator
+        init_meme_generator();
     } catch (e) {
         // console.error(e);
     }
