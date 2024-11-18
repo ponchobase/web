@@ -54,32 +54,24 @@ function init_meme_generator() {
         $(selector_meme_generator + " .download").off("click");
         $(selector_meme_generator + " .download").on("click", function () {
             try {
-                // Vars
-                var image_name = "poncho_meme.png";
 
-                // Create link
-                var link = document.createElement("a");
-                link.href = canvas.toDataURL("image/png").replace("image/png", "image/octet-stream");
 
-                // Download
-                link.download = image_name;
-                link.click();
+                setTimeout(function () {
+                    // Vars
+                    var image_name = "poncho_meme.png";
+
+                    // Create link
+                    var link = document.createElement("a");
+                    link.href = canvas.toDataURL("image/png").replace("image/png", "image/octet-stream");
+
+                    // Download
+                    link.download = image_name;
+                    link.click();
+                }, 2000);
             } catch (e) {
                 // console.error(e);
             }
         });
-
-
-
-        // Clear canvas
-        // context.clearRect(0, 0, canvas.width, canvas.height);
-
-        // // Wait for 2 seconds and clear the canvas
-        // setTimeout(function () {
-        //     ctx.clearRect(0, 0,
-        //         canvas.width, canvas.height);
-        // }, 2000);
-
     } catch (e) {
         // console.error(e);
     }
@@ -125,6 +117,7 @@ function create_meme() {
             poncho_json.meme_canvas.add(new fabric.IText("Type Here", {
                 fontFamily: "Delicious_500",
                 left: 100,
+                textAlign: "left",
                 top: 100
             }));
 
