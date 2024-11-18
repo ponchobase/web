@@ -59,7 +59,7 @@ function init_meme_generator() {
 
                 // Create link
                 var link = document.createElement("a");
-                link.href = canvas.toDataURL("image/png").replace("image/png", "image/octet-stream");
+                link.href = canvas.toDataURL("image/png");
 
                 // Download
                 link.download = image_name;
