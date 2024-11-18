@@ -26,6 +26,8 @@
             canvas {
                 float: left;
                 width: 100%;
+                width: 100% !important;
+                height: auto !important;
             }
 
             img {
@@ -35,6 +37,11 @@
                 top: 0;
                 width: 100%;
                 z-index: 1;
+            }
+
+            .canvas-container {
+                width: 100% !important;
+                height: auto !important;
             }
         }
     }

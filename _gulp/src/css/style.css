@@ -1174,6 +1174,8 @@ section {
 .meme_generator .left .meme canvas {
   float: left;
   width: 100%;
+  width: 100% !important;
+  height: auto !important;
 }
 .meme_generator .left .meme img {
   height: 100%;
@@ -1182,6 +1184,10 @@ section {
   top: 0;
   width: 100%;
   z-index: 1;
+}
+.meme_generator .left .meme .canvas-container {
+  width: 100% !important;
+  height: auto !important;
 }
 .meme_generator .right {
   padding: 0 0 0 30px;
