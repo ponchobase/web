@@ -1172,10 +1172,16 @@ section {
   position: relative;
 }
 .meme_generator .left .meme canvas {
+  float: left;
+  width: 100%;
+}
+.meme_generator .left .meme img {
+  height: 100%;
   left: 0;
+  position: absolute;
   top: 0;
   width: 100%;
-  z-index: 2;
+  z-index: 1;
 }
 .meme_generator .right {
   padding: 0 0 0 30px;

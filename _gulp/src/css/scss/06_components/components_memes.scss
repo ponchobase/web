@@ -24,10 +24,17 @@
             position: relative;
 
             canvas {
+                float: left;
+                width: 100%;
+            }
+
+            img {
+                height: 100%;
                 left: 0;
+                position: absolute;
                 top: 0;
                 width: 100%;
-                z-index: 2;
+                z-index: 1;
             }
         }
     }
