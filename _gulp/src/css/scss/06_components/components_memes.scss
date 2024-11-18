@@ -21,11 +21,28 @@
         }
 
         .meme {
+            display: inline-block;
+            position: relative;
+
+            canvas {
+                left: 0;
+                position: absolute;
+                top: 0;
+                width: 100%;
+                z-index: 2;
+            }
+
             img {
                 float: left;
-                padding: 0 30px 0 0;
+                position: relative;
+                visibility: hidden;
+                z-index: 1;
             }
         }
+    }
+
+    .right {
+        padding: 0 0 0 30px;
     }
 
     .gallery {

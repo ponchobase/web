@@ -1168,12 +1168,25 @@ section {
   transform: translateY(-1px);
   transition: 150ms;
 }
-.meme_generator .left .top button.icon i.small {
-  font-size: 1.65rem;
+.meme_generator .left .meme {
+  display: inline-block;
+  position: relative;
+}
+.meme_generator .left .meme canvas {
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 2;
 }
 .meme_generator .left .meme img {
   float: left;
-  padding: 0 30px 0 0;
+  position: relative;
+  visibility: hidden;
+  z-index: 1;
+}
+.meme_generator .right {
+  padding: 0 0 0 30px;
 }
 .meme_generator .gallery {
   display: grid;

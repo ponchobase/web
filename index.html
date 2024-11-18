@@ -915,8 +915,11 @@
 
                                 <!-- Meme -->
                                 <div class="meme">
-                                    <!-- Img -->
+                                    <!-- Default template -->
                                     <img src="/dist/img/memes/templates/poncho_template.png?v=2" alt="Poncho">
+
+                                    <!-- Canvas-->
+                                    <canvas id="meme_canvas"></canvas>
                                 </div>
                             </div>
 
@@ -950,37 +953,6 @@
                             </div>
                         </div>
                     </div>
-
-                    <!-- <canvas id="viewport" width="200" height="100" style="border:1px solid #000000;"></canvas>
-                    <script>
-                        var canvas = document.getElementById('viewport'),
-                            context = canvas.getContext('2d');
-                        make_base();
-                        function make_base() {
-                            // Add image to canvas
-                            base_image = new Image();
-                            base_image.src = '/dist/img/poncho.png';
-                            base_image.onload = function () {
-                                context.drawImage(base_image, 0, 0, canvas.width, canvas.height);
-                            }
-                            context.globalCompositeOperation = 'destination-over';
-                            // Add text to canvas
-                            var text = "Testing new!";
-                            context.clearRect(0, 0, canvas.width, canvas.height);
-                            context.fillStyle = "#000";
-                            context.font = "16px Arial";
-                            context.fillText(text, 20, canvas.height - 75);
-                            setTimeout(function () {
-                                // Convert canvas to image and download
-                                // after image loads
-                                let fileName = `ImageName.png`
-                                const link = document.createElement('a')
-                                link.href = canvas.toDataURL("image/png").replace("image/png", "image/octet-stream")
-                                link.download = fileName
-                                link.click();
-                            }, 2000);
-                        }
-                    </script> -->
                 </div>
             </div>
         </div>
