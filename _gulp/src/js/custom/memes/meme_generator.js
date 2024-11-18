@@ -88,21 +88,28 @@ function init_meme_generator() {
 function create_meme() {
     try {
         // Vars
-        var canvas = document.getElementById("meme_canvas");
         var selector_modal_memes = "[data-modal=memes]";
         var selector_meme_generator = selector_modal_memes + " .meme_generator";
 
         // Clear
         $(selector_meme_generator + " .meme img").remove();
 
+        try {
+            // Destroy fabric
+            poncho_json.meme_canvas.dispose();
+            poncho_json.meme_canvas = "";
+        } catch (e) {
+            // console.error(e);
+        }
+
         // New fabric canvas
-        const canvas_fabric = new fabric.Canvas('meme_canvas');
+        poncho_json.meme_canvas = new fabric.Canvas("meme_canvas");
 
         // Add image to canvas
         fabric.Image.fromURL("/dist/img/memes/templates/poncho_template.png?v=2").then((image) => {
             // Set fabric dimensions to match image
-            canvas_fabric.setHeight(image.width);
-            canvas_fabric.setWidth(image.height);
+            poncho_json.meme_canvas.setHeight(image.width);
+            poncho_json.meme_canvas.setWidth(image.height);
 
             // Set attributes
             image.set({
@@ -112,14 +119,17 @@ function create_meme() {
             });
 
             // Add image
-            canvas_fabric.add(image);
+            poncho_json.meme_canvas.add(image);
 
             // Add text
-            canvas_fabric.add(new fabric.IText('Type Here', { 
-                fontFamily: 'Delicious_500', 
-                left: 100, 
-                top: 100 
-              }));
+            poncho_json.meme_canvas.add(new fabric.IText("Type Here", {
+                fontFamily: "Delicious_500",
+                left: 100,
+                top: 100
+            }));
+
+            // Set
+
         });
     } catch (e) {
         // console.error(e);
