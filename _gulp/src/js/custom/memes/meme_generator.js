@@ -48,7 +48,7 @@ function init_meme_generator() {
             } catch (e) {
                 // console.error(e);
             }
-        });
+        }); 
 
         // On click - download
         $(selector_meme_generator + " .download").off("click");
@@ -57,8 +57,11 @@ function init_meme_generator() {
                 // New image
                 var image = new Image();
 
+                // Cross origin
+                image.setAttribute("crossOrigin", "anonymous");
+
                 // Image source
-                image.src = canvas.toDataURL();
+                image.src = canvas.toDataURL("image/png").replace("image/png", "image/octet-stream");
 
                 // Create link
                 var link = document.createElement("a");
