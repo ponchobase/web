@@ -908,7 +908,7 @@ section {
   color: var(--poncho_white);
 }
 .button--blue-inverse {
-  background: none;
+  background: var(--poncho_blue);
   border: 2px solid var(--poncho_white);
   color: var(--poncho_white);
 }
@@ -917,7 +917,7 @@ section {
   color: var(--poncho_white);
 }
 .button--green-inverse {
-  background: none;
+  background: var(--poncho_blue);
   border: 2px solid var(--poncho_white);
   color: var(--poncho_white);
 }
@@ -934,7 +934,7 @@ section {
   color: var(--poncho_white);
 }
 .button--orange-inverse {
-  background: none;
+  background: var(--poncho_blue);
   border: 2px solid var(--poncho_white);
   color: var(--poncho_white);
 }
@@ -943,7 +943,7 @@ section {
   color: var(--poncho_white);
 }
 .button--red-inverse {
-  background: none;
+  background: var(--poncho_blue);
   border: 2px solid var(--poncho_white);
   color: var(--poncho_white);
 }
@@ -1161,9 +1161,8 @@ section {
   text-align: center;
 }
 .meme_generator .left .top button.icon {
-  border: none;
+  border-radius: 5px;
   display: inline-block;
-  font-size: 2rem;
   margin-top: 0;
   transform: translateY(-1px);
   transition: 150ms;
@@ -1174,16 +1173,9 @@ section {
 }
 .meme_generator .left .meme canvas {
   left: 0;
-  position: absolute;
   top: 0;
   width: 100%;
   z-index: 2;
-}
-.meme_generator .left .meme img {
-  float: left;
-  position: relative;
-  visibility: hidden;
-  z-index: 1;
 }
 .meme_generator .right {
   padding: 0 0 0 30px;

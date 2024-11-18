@@ -13,13 +13,9 @@ function init_meme_generator() {
 
         // Onload
         image.onload = function () {
-            // Vars
-            var image_width = $(".meme_generator .left .meme img").width();
-            var image_height = $(".meme_generator .left .meme img").innerHeight();
-
             // Set width and height
-            context.canvas.width = image_width;
-            context.canvas.height = image_height;
+            context.canvas.width = image.width;
+            context.canvas.height = image.height;
 
             // Draw image
             context.drawImage(image, 0, 0, canvas.width, canvas.height);
@@ -29,7 +25,7 @@ function init_meme_generator() {
 
             // Add text to canvas
             // Vars
-            var text = "Testing new!";
+            var text = "Type here";
 
             // Attributes
             context.fillStyle = "#000";

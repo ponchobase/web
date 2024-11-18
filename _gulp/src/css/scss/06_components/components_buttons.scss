@@ -22,7 +22,7 @@
     }
 
     &--blue-inverse {
-        background: none;
+        background: var(--poncho_blue);
         border: 2px solid var(--poncho_white);
         color: var(--poncho_white);
 
@@ -33,7 +33,7 @@
     }
 
     &--green-inverse {
-        background: none;
+        background: var(--poncho_blue);
         border: 2px solid var(--poncho_white);
         color: var(--poncho_white);
 
@@ -54,7 +54,7 @@
     }
 
     &--orange-inverse {
-        background: none;
+        background: var(--poncho_blue);
         border: 2px solid var(--poncho_white);
         color: var(--poncho_white);
 
@@ -65,7 +65,7 @@
     }
 
     &--red-inverse {
-        background: none;
+        background: var(--poncho_blue);
         border: 2px solid var(--poncho_white);
         color: var(--poncho_white);
 

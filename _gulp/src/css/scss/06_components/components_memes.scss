@@ -11,9 +11,8 @@
             text-align: center;
 
             button.icon {
-                border: none;
+                border-radius: 5px;
                 display: inline-block;
-                font-size: 2rem;
                 margin-top: 0;
                 transform: translateY(-1px);
                 transition: 150ms;
@@ -26,17 +25,9 @@
 
             canvas {
                 left: 0;
-                position: absolute;
                 top: 0;
                 width: 100%;
                 z-index: 2;
-            }
-
-            img {
-                float: left;
-                position: relative;
-                visibility: hidden;
-                z-index: 1;
             }
         }
     }
