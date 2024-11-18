@@ -58,7 +58,7 @@ function init_meme_generator() {
                 var image = new Image();
 
                 // Image source
-                image.src = canvas.toDataURL("image/png").replace("image/png", "image/octet-stream");
+                image.src = canvas.toDataURL();
 
                 // Create link
                 var link = document.createElement("a");
