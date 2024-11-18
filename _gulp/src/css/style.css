@@ -1165,7 +1165,6 @@ section {
 }
 .meme_generator .left .top {
   margin: 0 auto 20px;
-  overflow: hidden;
   overflow-x: auto;
   text-align: center;
   white-space: nowrap;
@@ -1174,8 +1173,6 @@ section {
   border-radius: 5px;
   display: inline-block;
   margin-top: 0;
-  transform: translateY(-1px);
-  transition: 150ms;
 }
 .meme_generator .left .top button.compress {
   display: none;
