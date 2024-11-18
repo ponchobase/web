@@ -63,7 +63,7 @@ function init_meme_generator() {
                         URL.revokeObjectURL(url);
                     };
 
-                
+
 
                     // Create link
                     var link = document.createElement("a");
@@ -99,6 +99,46 @@ function init_meme_generator() {
                 // }, 'image/png');
 
                 // link.click();
+            } catch (e) {
+                // console.error(e);
+            }
+        });
+
+        // On click - expand
+        $(selector_meme_generator + " .expand").off("click");
+        $(selector_meme_generator + " .expand").on("click", function () {
+            try {
+                // Hide
+                $(this).hide();
+
+                // Show
+                $(selector_meme_generator + " .compress").show();
+
+                // Remove class
+                $(selector_meme_generator).removeClass("compress");
+
+                // Add class
+                $(selector_meme_generator).addClass("expand");
+            } catch (e) {
+                // console.error(e);
+            }
+        });
+
+        // On click - compress
+        $(selector_meme_generator + " .compress").off("click");
+        $(selector_meme_generator + " .compress").on("click", function () {
+            try {
+                // Hide
+                $(this).hide();
+
+                // Show
+                $(selector_meme_generator + " .expand").show();
+
+                // Remove class
+                $(selector_meme_generator).removeClass("expand");
+
+                // Add class
+                $(selector_meme_generator).addClass("compress");
             } catch (e) {
                 // console.error(e);
             }

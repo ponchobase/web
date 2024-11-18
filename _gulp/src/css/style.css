@@ -1156,9 +1156,19 @@ section {
 /************************  *************************/
 /* 	               Memes - Desktop   	           */
 /************************  *************************/
+.meme_generator.expand .left,
+.meme_generator.expand .right {
+  width: 100% !important;
+}
+.meme_generator.expand .right {
+  padding: 30px 0 0 0;
+}
 .meme_generator .left .top {
   margin: 0 auto 20px;
+  overflow: hidden;
+  overflow-x: auto;
   text-align: center;
+  white-space: nowrap;
 }
 .meme_generator .left .top button.icon {
   border-radius: 5px;
@@ -1167,9 +1177,14 @@ section {
   transform: translateY(-1px);
   transition: 150ms;
 }
+.meme_generator .left .top button.compress {
+  display: none;
+}
 .meme_generator .left .meme {
   display: inline-block;
+  float: left;
   position: relative;
+  width: 100%;
 }
 .meme_generator .left .meme canvas {
   float: left;
@@ -1192,12 +1207,18 @@ section {
 .meme_generator .right {
   padding: 0 0 0 30px;
 }
-.meme_generator .gallery {
+.meme_generator .right .accordions {
+  max-width: 100%;
+}
+.meme_generator .right .gallery {
   display: grid;
   gap: 25px;
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
-.meme_generator .gallery .active {
+.meme_generator .right .gallery img {
+  cursor: pointer;
+}
+.meme_generator .right .gallery .active {
   border: 5px solid var(--poncho_green);
   border-radius: 5px;
 }
@@ -1205,6 +1226,14 @@ section {
 /************************  *************************/
 /* 	               Memes - Mobile  	               */
 /************************  *************************/
+@media screen and (max-width: 1024px) {
+  .meme_generator .left .top button.compress, .meme_generator .left .top button.expand {
+    display: none !important;
+  }
+  .meme_generator .right {
+    padding: 30px 0 0 0;
+  }
+}
 /************************  *************************/
 /* 		            Memes - Print  		           */
 /************************  *************************/
