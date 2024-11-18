@@ -70,6 +70,7 @@ function init_meme_generator() {
 
                 // Click
                 link.click();
+                link.remove();
             } catch (e) {
                 // console.error(e);
             }
@@ -113,7 +114,7 @@ function create_meme() {
             });
 
             // Add image
-            poncho_json.meme_canvas.add(image);
+            // poncho_json.meme_canvas.add(image);
 
             // Add text
             poncho_json.meme_canvas.add(new fabric.IText("Type Here", {
