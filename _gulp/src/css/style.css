@@ -1235,6 +1235,79 @@ section {
 /* 		            Memes - Print  		           */
 /************************  *************************/
 /************************  *************************/
+/* 			    Messages - Desktop  	       	   */
+/************************  *************************/
+.messages {
+  border-radius: 5px;
+  bottom: 0;
+  display: none;
+  padding: 0 30px;
+  pointer-events: none;
+  position: fixed;
+  text-align: center;
+  width: 100%;
+  z-index: 10000000;
+}
+.messages .inner {
+  background: var(--poncho_blue);
+  border-bottom: 5px solid var(--poncho_green);
+  border-radius: 5px;
+  box-shadow: rgba(20, 200, 92, 0.7) 0 0 24px 0;
+  color: var(--primary_dark);
+  display: inline-block;
+  margin: 0px 0px 30px;
+  max-width: 690px;
+  padding: 30px;
+  pointer-events: all;
+  position: relative;
+  text-align: left;
+}
+.messages .inner .buttons {
+  border-radius: 50%;
+  box-shadow: rgba(29, 31, 255, 0.7) 0 0 24px 0;
+  position: absolute;
+  right: -17.5px;
+  top: -17.5px;
+}
+.messages .inner .buttons button {
+  background: var(--poncho_blue);
+  border: 2px solid var(--poncho_white);
+  border-radius: 50%;
+  color: var(--primary_dark);
+  margin: 0;
+  padding: 5px 10px;
+}
+.messages .inner .buttons button:active, .messages .inner .buttons button:focus, .messages .inner .buttons button:hover {
+  background: var(--poncho_blue_hover);
+}
+.messages .inner .buttons button i {
+  margin-right: 0;
+}
+.messages .inner i {
+  margin-right: 5px;
+}
+
+/************************  *************************/
+/* 			    Messages - Mobile  			       */
+/************************  *************************/
+@media screen and (max-width: 1024px) {
+  .messages {
+    padding: 0 20px;
+  }
+  .messages .inner {
+    margin: 0 0 20px;
+    padding: 20px;
+  }
+}
+/************************  *************************/
+/* 			    Messages - Print  			       */
+/************************  *************************/
+@media print {
+  .messages {
+    display: none !important;
+  }
+}
+/************************  *************************/
 /* 	               Modal - Desktop   		       */
 /************************  *************************/
 .disable-scroll {

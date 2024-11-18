@@ -56,6 +56,7 @@ gulp.task("dist-js", () => {
         "./src/js/custom/_common/_common.js",
         "./src/js/custom/_common/accordions.js",
         "./src/js/custom/_common/charts.js",
+        "./src/js/custom/_common/messages.js",
         "./src/js/custom/_common/modals.js",
         "./src/js/custom/_common/number_counters.js",
         "./src/js/custom/_common/particles.js",
