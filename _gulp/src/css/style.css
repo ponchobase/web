@@ -1262,6 +1262,9 @@ section {
   position: relative;
   text-align: left;
 }
+.messages .inner [data-name=message] :last-child {
+  margin-bottom: 0;
+}
 .messages .inner .buttons {
   border-radius: 50%;
   box-shadow: rgba(29, 31, 255, 0.7) 0 0 24px 0;

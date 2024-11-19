@@ -14,6 +14,9 @@ function init_meme_generator() {
             try {
                 // Create meme
                 create_meme();
+
+                // Show messages
+                show_messages(poncho_json.messages.reset.success);
             } catch (e) {
                 // console.error(e);
             }
@@ -25,6 +28,9 @@ function init_meme_generator() {
             try {
                 // Clear
                 $(selector_meme_generator + " .meme img").remove();
+
+                // Show messages
+                show_messages(poncho_json.messages.edit.success);
             } catch (e) {
                 // console.error(e);
             }
@@ -45,6 +51,9 @@ function init_meme_generator() {
 
                 // Append
                 $(selector_meme_generator + " .meme").append(image);
+
+                // Show messages
+                show_messages(poncho_json.messages.save.success);
             } catch (e) {
                 // console.error(e);
             }
