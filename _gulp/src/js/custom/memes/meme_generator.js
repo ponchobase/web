@@ -185,7 +185,6 @@ function create_meme() {
         fabric.InteractiveFabricObject.ownDefaults = {
             ...fabric.InteractiveFabricObject.ownDefaults,
             cornerSize: 20,
-
             cornerStrokeColor: '#1d48ff',
             cornerColor: 'lightblue',
             cornerStyle: 'circle',
@@ -216,7 +215,7 @@ function create_meme() {
 
             // iText
             var text_object = new fabric.IText('Type Here', {
-                fontFamily: "Delicious_500",
+                fontFamily: "pricedown",
                 fontSize: image.height / 10,
                 id: 2,
                 textAlign: "center",
