@@ -15,6 +15,9 @@ function init_meme_generator() {
                 // Create meme
                 create_meme();
 
+                // Set active object
+                set_active_object(2);
+
                 // Show messages
                 show_messages(poncho_json.messages.reset.success);
             } catch (e) {
@@ -29,6 +32,9 @@ function init_meme_generator() {
                 // Clear
                 $(selector_meme_generator + " .meme img").remove();
 
+                // Set active object
+                set_active_object(2);
+
                 // Show messages
                 show_messages(poncho_json.messages.edit.success);
             } catch (e) {
@@ -42,6 +48,10 @@ function init_meme_generator() {
             try {
                 // Clear
                 $(selector_meme_generator + " .meme img").remove();
+
+                // Remove active
+                poncho_json.meme_canvas.discardActiveObject();
+                poncho_json.meme_canvas.renderAll();
 
                 // New image
                 var image = new Image();
@@ -63,6 +73,20 @@ function init_meme_generator() {
         $(selector_meme_generator + " .download").off("click");
         $(selector_meme_generator + " .download").on("click", function () {
             try {
+                // Vars
+                var active_id = "";
+
+                try {
+                    // Vars
+                    active_id = poncho_json.meme_canvas.getActiveObject().id
+                } catch (e) {
+                    // console.error(e);
+                }
+
+                // Remove active
+                poncho_json.meme_canvas.discardActiveObject();
+                poncho_json.meme_canvas.renderAll();
+
                 // Canvas to blob
                 canvas.toBlob((blob) => {
                     // Create image
@@ -83,6 +107,9 @@ function init_meme_generator() {
                     // Click
                     link.click();
                     link.remove();
+
+                    // Set active object
+                    set_active_object(active_id);
 
                     // Show messages
                     show_messages(poncho_json.messages.download.success);
@@ -166,23 +193,45 @@ function create_meme() {
             image.set({
                 hasControls: false,
                 hoverCursor: "auto",
+                id: 1,
                 selectable: false
             });
 
             // Add image
             poncho_json.meme_canvas.add(image);
 
-            // Add text
-            poncho_json.meme_canvas.add(new fabric.IText("Type Here", {
+            // iText
+            var text_object = new fabric.IText('Type Here', {
                 fontFamily: "Delicious_500",
+                id: 2,
                 left: 100,
                 textAlign: "left",
                 top: 100
-            }));
+            });
+
+            // Add text
+            poncho_json.meme_canvas.add(text_object);
+            poncho_json.meme_canvas.setActiveObject(text_object);
 
             // Set
 
         });
+    } catch (e) {
+        // console.error(e);
+    }
+}
+
+function set_active_object(active_id) {
+    try {
+        // Loop
+        poncho_json.meme_canvas.getObjects().forEach(function (object) {
+            // Check if
+            if (object.id == active_id) {
+                // Set active
+                poncho_json.meme_canvas.setActiveObject(object);
+                poncho_json.meme_canvas.renderAll();
+            }
+        })
     } catch (e) {
         // console.error(e);
     }
