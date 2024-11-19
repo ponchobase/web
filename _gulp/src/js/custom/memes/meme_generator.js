@@ -67,18 +67,6 @@ function init_meme_generator() {
                     // Show messages
                     show_messages(poncho_json.messages.save.success);
                 });
-
-                //  // New image
-                //  var image = new Image();
-
-                //  // Image source
-                //  image.src = canvas.toDataURL("image/png").replace("image/png", "image/octet-stream");
-
-                //  // Append
-                //  $(selector_meme_generator + " .meme").append(image);
-
-                //  // Show messages
-                //  show_messages(poncho_json.messages.save.success);
             } catch (e) {
                 // console.error(e);
             }
@@ -214,14 +202,15 @@ function create_meme() {
             // iText
             var text_object = new fabric.IText('Type Here', {
                 fontFamily: "Delicious_500",
+                fontSize: image.height / 10,
                 id: 2,
-                left: 100,
-                textAlign: "left",
-                top: 100
+                textAlign: "center",
+                top: image.height / 4
             });
 
             // Add text
             poncho_json.meme_canvas.add(text_object);
+            poncho_json.meme_canvas.centerObjectH(text_object)
             poncho_json.meme_canvas.setActiveObject(text_object);
 
             // Set
