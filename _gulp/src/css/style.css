@@ -1250,9 +1250,9 @@ section {
 }
 .messages .inner {
   background: var(--poncho_blue);
-  border-bottom: 5px solid var(--poncho_green);
+  border-bottom: 5px solid var(--poncho_orange);
   border-radius: 5px;
-  box-shadow: rgba(20, 200, 92, 0.7) 0 0 24px 0;
+  box-shadow: rgba(255, 153, 0, 0.7) 0 0 24px 0;
   color: var(--primary_dark);
   display: inline-block;
   margin: 0px 0px 30px;
