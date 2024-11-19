@@ -184,14 +184,14 @@ function create_meme() {
 
         fabric.InteractiveFabricObject.ownDefaults = {
             ...fabric.InteractiveFabricObject.ownDefaults,
-            cornerSize: 20,
-            cornerStrokeColor: '#1d48ff',
-            cornerColor: 'lightblue',
-            cornerStyle: 'circle',
+            cornerSize: 25,
+            cornerStrokeColor: "#1d48ff",
+            cornerColor: "lightblue",
+            cornerStyle: "circle",
             padding: 10,
             transparentCorners: false,
             cornerDashArray: [2, 2],
-            borderColor: '#ffa51f',
+            borderColor: "#ffa51f",
             borderDashArray: [3, 1, 3],
             borderScaleFactor: 2,
         }
@@ -214,21 +214,19 @@ function create_meme() {
             poncho_json.meme_canvas.add(image);
 
             // iText
-            var text_object = new fabric.IText('Type Here', {
+            var text_object = new fabric.IText("Create Your\nPoncho Meme", {
                 fontFamily: "pricedown",
                 fontSize: image.height / 10,
                 id: 2,
                 textAlign: "center",
-                top: image.height / 4
+                top: image.height / 6,
+                width: image.width / 2
             });
 
             // Add text
             poncho_json.meme_canvas.add(text_object);
             poncho_json.meme_canvas.centerObjectH(text_object)
             poncho_json.meme_canvas.setActiveObject(text_object);
-
-            // Set
-
         });
     } catch (e) {
         // console.error(e);
