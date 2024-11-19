@@ -3,7 +3,10 @@ var poncho_json = {
     home_swiper: "",
 
     // Meme generator
-    meme_canvas: ""
+    meme_canvas: "",
+
+    // Messages
+    messages_timeout: ""
 }
 
     

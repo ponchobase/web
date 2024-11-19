@@ -1,82 +1,57 @@
-// On init, check if message in local storage to display
 function init_messages() {
     try {
         // Vars
-        var message = check_value_defined(localStorage.message);
-        var messages_selector = ".messages";
-
-        // If message, show, then remove
-        if (message) {
-            messages_popup(message);
-            localStorage.removeItem("message");
-        }
+        var selector_messages = ".messages";
 
         // Close messages 
-        $(messages_selector + " .close").on("click", function () {
-            $(messages_selector).hide();
+        $(selector_messages + " .close").off("click");
+        $(selector_messages + " .close").on("click", function () {
+            // Hide
+            $(selector_messages).hide();
         });
     } catch (e) {
         // console.error(e);
     }
 }
 
-// Popup messages
 function messages_popup(message) {
     try {
-        if (typeof message !== "undefined" && message !== null && message != "") {
-            // Vars
-            var message_selector = ".messages [data-name=message]";
-            var messages_selector = ".messages";
-
-            // Restart timer
-            clearTimeout(app.message_timeout);
-
-            // Check if
-            if (!$(message_selector).is(":visible")) {
-                // Empty
-                $(message_selector).empty();
-                $(message_selector).append(message);
-            } else {
-                $(message_selector).append("<br/>" + message);
-            }
-
-            // Fade in
-            $(messages_selector).fadeIn();
-
-            // Set 5 second timeout
-            app.message_timeout = setTimeout(function () {
-                // Fadeout
-                $(messages_selector).fadeOut();
-            }, 5000);
-        }
-    } catch (e) {
-        // console.error(e);
-    }
-}
-
-// Form messages
-function messages_form(form_name, input_id, message) {
-    try {
-        // Check if
-        if (typeof message == "undefined" || message == null || message == "") {
-            message = "";
-        }
-
         // Vars
-        var form_selector = "form[name=" + form_name + "] ";
+        var selector_messages = ".messages";
+        var selector_message = selector_messages + " [data-name=message]";
+
+        // Restart timer
+        clearTimeout(poncho_json.messages_timeout);
 
         // Check if
-        if (input_id != "") {
-            $(form_selector + input_id).removeClass("valid");
-            $(form_selector + input_id).addClass("error");
-            $(form_selector + "label" + input_id + "-error").removeClass("valid");
-            $(form_selector + "label" + input_id + "-error").empty();
-            $(form_selector + "label" + input_id + "-error").append(message);
+        if (!$(selector_message).is(":visible")) {
+            // Empty
+            $(selector_message).empty();
+
+            // Append
+            $(selector_message).append(message);
+        } else {
+            // Append existing
+            $(selector_message).append("<br/>" + message);
         }
+
+        // Fade in
+        $(selector_messages).fadeIn();
+
+        // Set 5 second timeout
+        poncho_json.messages_timeout = setTimeout(function () {
+            // Fadeout
+            $(selector_messages).fadeOut();
+        }, 5000);
     } catch (e) {
         // console.error(e);
     }
 }
+
+
+
+
+
 
 
 // Logic for which message to display
@@ -314,8 +289,8 @@ function messages_response(response) {
             } else {
                 messages_popup(app.messages.dashboard._common.heatmap_settings.error);
             }
-        // Home
-    }    else if (response.form_name == "read_home_form") {
+            // Home
+        } else if (response.form_name == "read_home_form") {
             if (!response.home_found) {
                 messages_popup(app.messages.dashboard.home.not_found);
             }

@@ -23,6 +23,9 @@ function initialize_app() {
         // Init lazy load
         init_lazy_load();
 
+        // Init messages
+        init_messages();
+
         // Init modals
         init_modals();
 
