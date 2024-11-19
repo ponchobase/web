@@ -15,9 +15,6 @@ function init_meme_generator() {
                 // Create meme
                 create_meme();
 
-                // Set active object
-                set_active_object(2);
-
                 // Show messages
                 show_messages(poncho_json.messages.reset.success);
             } catch (e) {
@@ -53,17 +50,35 @@ function init_meme_generator() {
                 poncho_json.meme_canvas.discardActiveObject();
                 poncho_json.meme_canvas.renderAll();
 
-                // New image
-                var image = new Image();
+                // Canvas to blob
+                canvas.toBlob((blob) => {
+                    // New image
+                    var image = new Image();
 
-                // Image source
-                image.src = canvas.toDataURL("image/png").replace("image/png", "image/octet-stream");
+                    // URL
+                    var url = URL.createObjectURL(blob);
 
-                // Append
-                $(selector_meme_generator + " .meme").append(image);
+                    // Image source
+                    image.src = url;
 
-                // Show messages
-                show_messages(poncho_json.messages.save.success);
+                    // Append
+                    $(selector_meme_generator + " .meme").append(image);
+
+                    // Show messages
+                    show_messages(poncho_json.messages.save.success);
+                });
+
+                //  // New image
+                //  var image = new Image();
+
+                //  // Image source
+                //  image.src = canvas.toDataURL("image/png").replace("image/png", "image/octet-stream");
+
+                //  // Append
+                //  $(selector_meme_generator + " .meme").append(image);
+
+                //  // Show messages
+                //  show_messages(poncho_json.messages.save.success);
             } catch (e) {
                 // console.error(e);
             }
@@ -89,15 +104,11 @@ function init_meme_generator() {
 
                 // Canvas to blob
                 canvas.toBlob((blob) => {
-                    // Create image
-                    var image = document.createElement("img");
-                    var url = URL.createObjectURL(blob);
+                    // New image
+                    var image = new Image();
 
-                    // Image on load
-                    image.onload = () => {
-                        // No longer need to read the blob so it's revoked
-                        URL.revokeObjectURL(url);
-                    };
+                    // URL
+                    var url = URL.createObjectURL(blob);
 
                     // Create link
                     var link = document.createElement("a");
