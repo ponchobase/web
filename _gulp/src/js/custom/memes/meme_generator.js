@@ -63,16 +63,17 @@ function init_meme_generator() {
         $(selector_meme_generator + " .download").off("click");
         $(selector_meme_generator + " .download").on("click", function () {
             try {
+                // Canvas to blob
                 canvas.toBlob((blob) => {
-                    const newImg = document.createElement("img");
-                    const url = URL.createObjectURL(blob);
+                    // Create image
+                    var image = document.createElement("img");
+                    var url = URL.createObjectURL(blob);
 
-                    newImg.onload = () => {
-                        // no longer need to read the blob so it's revoked
+                    // Image on load
+                    image.onload = () => {
+                        // No longer need to read the blob so it's revoked
                         URL.revokeObjectURL(url);
                     };
-
-
 
                     // Create link
                     var link = document.createElement("a");
@@ -86,31 +87,6 @@ function init_meme_generator() {
                     // Show messages
                     show_messages(poncho_json.messages.download.success);
                 });
-
-                // // New image
-                // var image = new Image();
-
-                // // Image source
-                // image.src = canvas.toDataURL("image/png").replace("image/png", "image/octet-stream");
-
-                // // Create link
-                // var link = document.createElement("a");
-                // link.href = image.src;
-                // link.download = "poncho_meme.png";
-
-                // // Click
-                // link.click();
-                // link.remove();
-
-
-                // var link = document.createElement("a");
-                // link.download = "image.png";
-
-                // canvas.toBlob(function (blob) {
-                //     link.href = URL.createObjectURL(blob);
-                // }, 'image/png');
-
-                // link.click();
             } catch (e) {
                 // console.error(e);
             }
