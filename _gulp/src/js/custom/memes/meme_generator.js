@@ -82,6 +82,9 @@ function init_meme_generator() {
                     // Click
                     link.click();
                     link.remove();
+
+                    // Show messages
+                    show_messages(poncho_json.messages.download.success);
                 });
 
                 // // New image
