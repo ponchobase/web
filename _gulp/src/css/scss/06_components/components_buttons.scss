@@ -105,7 +105,11 @@
 
 // @include media("xl") {}
 
-// @include media("lg") {}
+@include media("lg") {
+    .button {
+        padding: 10px 15px;
+    }
+}
 
 // @include media("md") {}
 

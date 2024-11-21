@@ -104,15 +104,23 @@
         .logo {
             a {
                 img {
-                    max-width: 100px;
-                    width: 100px;
+                    max-width:75px;
+                    width: 75px;
                 }
             }
         }
     }
 }
 
-// @include media("xs") {}
+@include media("xs") {
+    .header {
+        .inner {
+            .xs-hide {
+                display: none;
+            }
+        }
+    }
+}
 
 // @include media("xxs") {}
 
