@@ -188,7 +188,7 @@ function create_meme() {
             cornerStrokeColor: "#1d48ff",
             cornerColor: "lightblue",
             cornerStyle: "circle",
-            padding: 10,
+            padding: 20,
             transparentCorners: false,
             cornerDashArray: [2, 2],
             borderColor: "#ffa51f",
@@ -214,13 +214,13 @@ function create_meme() {
             poncho_json.meme_canvas.add(image);
 
             // iText
-            var text_object = new fabric.IText("Create Your\nPoncho Meme", {
+            var text_object = new fabric.Textbox("Create Your\nPoncho Meme", {
                 fontFamily: "pricedown",
                 fontSize: image.height / 10,
                 id: 2,
                 textAlign: "center",
                 top: image.height / 6,
-                width: image.width / 2
+                width: image.width / 1.5
             });
 
             // Add text
