@@ -1227,12 +1227,17 @@ section {
   gap: 25px;
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
-.meme_generator .right .gallery img {
-  cursor: pointer;
-}
-.meme_generator .right .gallery .active {
-  border: 5px solid var(--poncho_green);
+.meme_generator .right .gallery .template-button {
   border-radius: 5px;
+  margin: 0;
+  padding: 0;
+}
+.meme_generator .right .gallery .template-button.active {
+  border: 5px solid var(--poncho_green);
+}
+.meme_generator .right .gallery .template-button img {
+  cursor: pointer;
+  float: left;
 }
 
 /************************  *************************/
