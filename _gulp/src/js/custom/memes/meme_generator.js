@@ -263,7 +263,7 @@ function create_meme(template) {
                     id: 2,
                     textAlign: "center",
                     top: image.height / 1.515,
-                    width: image.width / 1.5
+                    width: image.width / 2
                 });
             }else{
                 // Textbox
