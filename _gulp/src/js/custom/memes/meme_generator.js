@@ -6,14 +6,14 @@ function init_meme_generator() {
         var selector_meme_generator = selector_modal_memes + " .meme_generator";
 
         // Create meme
-        create_meme();
+        create_meme("with_sign");
 
         // On click - reset
         $(selector_meme_generator + " .reset").off("click");
         $(selector_meme_generator + " .reset").on("click", function () {
             try {
                 // Create meme
-                create_meme();
+                create_meme(poncho_json.template);
 
                 // Show messages
                 show_messages(poncho_json.messages.reset.success);
@@ -171,7 +171,8 @@ function init_meme_generator() {
                 // Vars
                 var template = $(this).attr("data-template");
 
-                console.log(template);
+                // Create meme
+                create_meme(template);
             } catch (e) {
                 // console.error(e);
             }
@@ -181,7 +182,7 @@ function init_meme_generator() {
     }
 }
 
-function create_meme() {
+function create_meme(template) {
     try {
         // Vars
         var selector_modal_memes = "[data-modal=memes]";
@@ -217,8 +218,17 @@ function create_meme() {
             borderScaleFactor: 3
         }
 
+        // Check if
+        if (!check_value_defined(template)) {
+            // Vars
+            template = "with_sign";
+        }
+
+        // Set
+        poncho_json.template = template;
+
         // Add image to canvas
-        fabric.Image.fromURL("/dist/img/memes/templates/with_sign.png?v=3").then((image) => {
+        fabric.Image.fromURL("/dist/img/memes/templates/" + template + ".png?v=3").then((image) => {
             // Set fabric dimensions to match image
             poncho_json.meme_canvas.setHeight(image.width);
             poncho_json.meme_canvas.setWidth(image.height);
@@ -234,15 +244,38 @@ function create_meme() {
             // Add image
             poncho_json.meme_canvas.add(image);
 
-            // iText
-            var text_object = new fabric.Textbox("Create Your\nPoncho Meme", {
-                fontFamily: "pricedown",
-                fontSize: image.height / 10,
-                id: 2,
-                textAlign: "center",
-                top: image.height / 6,
-                width: image.width / 1.5
-            });
+            // Check if
+            if (template == "with_sign") {
+                // Textbox
+                var text_object = new fabric.Textbox("Create Your\nPoncho Meme", {
+                    fontFamily: "pricedown",
+                    fontSize: image.height / 10,
+                    id: 2,
+                    textAlign: "center",
+                    top: image.height / 6,
+                    width: image.width / 1.5
+                });
+            } else if (template == "change_my_mind") {
+                // Textbox
+                var text_object = new fabric.Textbox("Create Your\nPoncho Meme", {
+                    fontFamily: "pricedown",
+                    fontSize: image.height / 13,
+                    id: 2,
+                    textAlign: "center",
+                    top: image.height / 1.515,
+                    width: image.width / 1.5
+                });
+            }else{
+                // Textbox
+                var text_object = new fabric.Textbox("Create Your\nPoncho Meme", {
+                    fontFamily: "pricedown",
+                    fontSize: image.height / 10,
+                    id: 2,
+                    textAlign: "center",
+                    top: image.height / 6,
+                    width: image.width / 1.5
+                });
+            }
 
             // Add text
             poncho_json.meme_canvas.add(text_object);
