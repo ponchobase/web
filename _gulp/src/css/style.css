@@ -1238,6 +1238,7 @@ section {
 .meme_generator .right .gallery .template-button img {
   cursor: pointer;
   float: left;
+  width: 100%;
 }
 
 /************************  *************************/
