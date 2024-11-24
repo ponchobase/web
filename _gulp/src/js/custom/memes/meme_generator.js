@@ -157,6 +157,25 @@ function init_meme_generator() {
                 // console.error(e);
             }
         });
+
+        // On click - select templte
+        $(selector_meme_generator + " .template-button").off("click");
+        $(selector_meme_generator + " .template-button").on("click", function () {
+            try {
+                // Remove clss
+                $(selector_meme_generator + " .template-button").removeClass("active");
+
+                // Add class
+                $(this).addClass("active");
+
+                // Vars
+                var template = $(this).attr("data-template");
+
+                console.log(template);
+            } catch (e) {
+                // console.error(e);
+            }
+        });
     } catch (e) {
         // console.error(e);
     }
@@ -182,6 +201,7 @@ function create_meme() {
         // New fabric canvas
         poncho_json.meme_canvas = new fabric.Canvas("meme_canvas");
 
+        // Defaults
         fabric.InteractiveFabricObject.ownDefaults = {
             ...fabric.InteractiveFabricObject.ownDefaults,
             cornerSize: 30,

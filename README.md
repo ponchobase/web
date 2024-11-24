@@ -35,17 +35,19 @@ Listen 80
 ### Production
 
 * github-pages: https://github.com/ponchobase/files/deployments/github-pages
-* Branch
 ```
+Branch
 git switch <branch>  # to switch to an existing branch
 git switch -c <new_branch>  # to create a new branch and switch to it
 git branch --show-current # show current branch name
 ```
-* Merge 
+```
+Merge 
 git checkout main
 git pull origin main
 git merge branch
 git push origin main
+```
 
 ## Authors
 
