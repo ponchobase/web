@@ -136,7 +136,7 @@ function init_number_counter() {
         // Loop
         $(".number-counter.count").each(function () {
             // Vars
-            var offset_top = $(this).offset().top - window.innerHeight + 100;
+            var offset_top = $(this).offset().top - window.innerHeight + 50;
 
             // Check if counter in view
             if ($(window).scrollTop() > offset_top) {

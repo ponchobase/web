@@ -37,9 +37,11 @@ Listen 80
 * github-pages: https://github.com/ponchobase/files/deployments/github-pages
 ```
 Branch
-git switch <branch>  # to switch to an existing branch
-git switch -c <new_branch>  # to create a new branch and switch to it
+git switch -c <new_branch> # to create a new branch and switch to it
+git switch <branch> # to switch to an existing branch
 git branch --show-current # show current branch name
+git push origin -d <branchname> # Delete remote branch
+git branch -d <branchname> # Delete local branch
 ```
 ```
 Merge 
