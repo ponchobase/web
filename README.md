@@ -54,9 +54,9 @@ git push origin main
 ```
 
 ### Handlebars
-
-* Go to _gulp/src/js/templates and run: 
 ```
+Precompiling templates
+cd _gulp/src/js/templates
 handlebars *.handlebars -f ../../../../dist/js/templates.js
 ```
 
