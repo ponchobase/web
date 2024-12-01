@@ -1833,6 +1833,9 @@ section.faq img {
   section.nfts .poncho-pals .container {
     padding: 20px;
   }
+  section.tokenomics .top {
+    margin: 0 auto 20px;
+  }
   section.roadmap .roadmap-swiper .swiper .swiper-wrapper .swiper-slide .phase {
     margin: 20px;
   }
