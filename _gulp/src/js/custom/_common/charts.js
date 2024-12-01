@@ -44,9 +44,17 @@ function init_tokenomics_chart() {
                     onHover: (event, chartElement) => {
                         event.native.target.style.cursor = chartElement ? "pointer" : "default";
                     }
+                },
+                tooltip: {
+                    backgroundColor: "#1d1a7a",
+                    callbacks: {
+                        label: function (context) {
+                            return " Allocation: " + context.dataset.data[context.dataIndex] + "%";
+                        }
+                    },
                 }
             },
-            rotation: 270,
+            rotation: 270
         }
 
         // Init new chart
