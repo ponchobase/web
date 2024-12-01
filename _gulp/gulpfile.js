@@ -69,7 +69,7 @@ gulp.task("dist-js", () => {
     ])
         .pipe(concat("poncho.min.js"))
         // .pipe(sourcemaps.init())
-        .pipe(uglify())
+        // .pipe(uglify())
         // .pipe(sourcemaps.write("."))
         .pipe(gulp.dest("../dist/js"));
 });

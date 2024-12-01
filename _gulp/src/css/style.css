@@ -644,6 +644,9 @@ section {
 .font--small {
   font-size: 0.85rem;
 }
+.font--white {
+  color: var(--poncho_white);
+}
 
 .lazy-load {
   opacity: 0;

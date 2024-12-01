@@ -80,6 +80,10 @@
     &--small {
         font-size: 0.85rem;
     }
+
+    &--white {
+        color: var(--poncho_white);
+    }
 }
 
 .lazy-load {

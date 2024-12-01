@@ -30,10 +30,30 @@ function init_tokenomics_chart() {
             }]
         }
 
+        // Options
+        var options = {
+            onHover: (event, chartElement) => {
+                event.native.target.style.cursor = chartElement[0] ? "pointer" : "default";
+            },
+            plugins: {
+                legend: {
+                    display: true,
+                    labels: {
+                        color: "#fff"
+                    },
+                    onHover: (event, chartElement) => {
+                        event.native.target.style.cursor = chartElement ? "pointer" : "default";
+                    }
+                }
+            },
+            rotation: 270,
+        }
+
         // Init new chart
         new Chart(ctx, {
             type: type,
-            data: data
+            data: data,
+            options: options
         });
     } catch (e) {
         // console.error(e);
