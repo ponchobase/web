@@ -73,6 +73,7 @@ handlebars *.handlebars -f ../../../../dist/js/templates.js
 
 * [Chart.js](https://www.chartjs.org/)
 * [DEX Screener API](https://docs.dexscreener.com/api/reference)
+* [FabricJS](https://fabricjs.com/)
 * [Font Awesome](https://fontawesome.com/)
 * [Handlebars](https://handlebarsjs.com/)
 * [jQuery](https://jquery.com/)
