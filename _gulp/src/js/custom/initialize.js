@@ -10,6 +10,9 @@ $(function () {
 
 function initialize_app() {
     try {
+        // Load templates
+        load_templates();
+
         // Primary
         // Init accordions
         init_accordions();
@@ -50,6 +53,16 @@ function initialize_app() {
         // Secondary
         // Init meme generator
         init_meme_generator();
+    } catch (e) {
+        // console.error(e);
+    }
+}
+
+function load_templates() {
+    try {
+        // Modals
+        var html = Handlebars.templates.modals();
+        $(".modals").html(html);
     } catch (e) {
         // console.error(e);
     }

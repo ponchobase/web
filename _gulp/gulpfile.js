@@ -32,7 +32,7 @@ gulp.task("dist-js-vendor", () => {
     return gulp.src([
         // Vendor
         "./src/js/vendor/jquery.min.js",
-        './src/js/vendor/handlebars.js',
+        "./src/js/vendor/handlebars.js",
         "./src/js/vendor/chart.umd.min.js",
         "./src/js/vendor/fabric.min.js",
         "./src/js/vendor/particles.min.js",
