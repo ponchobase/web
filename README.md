@@ -35,6 +35,8 @@ Listen 80
 ### Production
 
 * github-pages: https://github.com/ponchobase/files/deployments/github-pages
+
+### GIT
 ```
 Branch
 git switch -c <new_branch> # to create a new branch and switch to it
@@ -51,6 +53,13 @@ git merge branch
 git push origin main
 ```
 
+### Handlebars
+
+* Go to _gulp/src/js/templates and run: 
+```
+handlebars *.handlebars -f ../../../../dist/js/templates.js
+```
+
 ## Authors
 
 * Poncho Dev Team
@@ -65,6 +74,7 @@ git push origin main
 * [Chart.js](https://www.chartjs.org/)
 * [DEX Screener API](https://docs.dexscreener.com/api/reference)
 * [Font Awesome](https://fontawesome.com/)
+* [Handlebars](https://handlebarsjs.com/)
 * [jQuery](https://jquery.com/)
 * [particles.js](https://vincentgarreau.com/particles.js/)
 * [RealFaviconGenerator](https://realfavicongenerator.net/)
