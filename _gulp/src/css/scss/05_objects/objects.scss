@@ -68,7 +68,7 @@
     &--orange {
         color: var(--poncho_orange);
     }
-    
+
     &--normal {
         font-weight: normal;
     }
@@ -122,10 +122,21 @@
 
     &--bottom {
         margin-bottom: 20px;
+
+        &-small {
+            margin-bottom: 15px;
+        }
     }
 
     &--top {
         margin-top: 20px;
+    }
+}
+
+.overflow {
+    &--x {
+        overflow-x: auto;
+        white-space: nowrap;
     }
 }
 
@@ -184,6 +195,7 @@
 // @include media("xl") {}
 
 @include media("lg") {
+
     .col-33,
     .col-50,
     .col-67 {
@@ -220,7 +232,11 @@
     }
 }
 
-// @include media("xs") {}
+@include media("xs") {
+    .xs-hide {
+        display: none;
+    }
+}
 
 // @include media("xxs") {}
 
