@@ -1240,14 +1240,14 @@ section {
   max-width: 100%;
 }
 .meme_generator .right .gallery {
-  max-height: 30vh;
+  max-height: 50vh;
   overflow: hidden;
   overflow-y: auto;
 }
 .meme_generator .right .gallery .inner {
   display: grid;
   grid-gap: 10px;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
   overflow: hidden;
 }
 .meme_generator .right .gallery .inner .template-button {

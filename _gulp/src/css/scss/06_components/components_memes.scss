@@ -81,14 +81,14 @@
         }
 
         .gallery {
-            max-height: 30vh;
+            max-height: 50vh;
             overflow: hidden;
             overflow-y: auto;
 
             .inner {
                 display: grid;
                 grid-gap: 10px;
-                grid-template-columns: 1fr 1fr 1fr 1fr;
+                grid-template-columns: 1fr 1fr 1fr;
                 overflow: hidden;
 
                 .template-button {
