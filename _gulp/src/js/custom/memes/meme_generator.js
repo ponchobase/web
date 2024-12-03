@@ -250,7 +250,9 @@ function create_meme(template) {
                 var text_object = new fabric.Textbox("Create Your\nPoncho Meme", {
                     fontFamily: "pricedown",
                     fontSize: image.height / 10,
-                    id: 2,
+                    id: 1,
+                    left: image.width / 2,
+                    originX: "center",
                     textAlign: "center",
                     top: image.height / 6,
                     width: image.width / 1.5
@@ -261,16 +263,32 @@ function create_meme(template) {
                     fontFamily: "pricedown",
                     fontSize: image.height / 13,
                     id: 2,
+                    left: image.width / 2,
+                    originX: "center",
                     textAlign: "center",
                     top: image.height / 1.515,
                     width: image.width / 2
                 });
-            }else{
+            } else if (template == "smart") {
+                // Textbox
+                var text_object = new fabric.Textbox("Create Your\nPoncho Meme", {
+                    fontFamily: "pricedown",
+                    fontSize: image.height / 13,
+                    id: 3,
+                    left: image.width / 1.282,
+                    originX: "center",
+                    textAlign: "center",
+                    top: image.height / 13.5,
+                    width: image.width / 4
+                });
+            } else {
                 // Textbox
                 var text_object = new fabric.Textbox("Create Your\nPoncho Meme", {
                     fontFamily: "pricedown",
                     fontSize: image.height / 10,
-                    id: 2,
+                    id: 1,
+                    left: image.width / 2,
+                    originX: "center",
                     textAlign: "center",
                     top: image.height / 6,
                     width: image.width / 1.5
@@ -279,7 +297,7 @@ function create_meme(template) {
 
             // Add text
             poncho_json.meme_canvas.add(text_object);
-            poncho_json.meme_canvas.centerObjectH(text_object)
+            // poncho_json.meme_canvas.centerObjectH(text_object);
             poncho_json.meme_canvas.setActiveObject(text_object);
         });
     } catch (e) {
