@@ -1292,7 +1292,7 @@ section {
 @media screen and (max-width: 480px) {
   .meme_generator .right .gallery .inner {
     grid-gap: 5px;
-    grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(65px, 1fr));
   }
   .meme_generator .right .gallery .inner .template-button.active img {
     border: 2px solid var(--poncho_green);
