@@ -290,7 +290,7 @@ function create_meme(template) {
                     left: image.width / 1.315,
                     originX: "center",
                     textAlign: "center",
-                    top: image.height / 7,
+                    top: image.height / 6.6,
                     width: image.width / 3
                 });
 
@@ -301,7 +301,7 @@ function create_meme(template) {
                     left: image.width / 1.315,
                     originX: "center",
                     textAlign: "center",
-                    top: image.height / 1.69,
+                    top: image.height / 1.68,
                     width: image.width / 3
                 });
             } else {
