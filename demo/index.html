@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="description" content="Canvas to gif client-side" />
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=yes, initial-scale=1, maximum-scale=1"
+    />
+    <meta itemprop="description" content="Canvas to gif client-side" />
+    <meta itemprop="name" content="Canvas to gif client-side" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta id="theme-color" name="theme-color" content="#ffffff" />
+
+    <base target="_blank" />
+
+    <title>Canvas to Gif</title>
+
+    <link
+      href="//fonts.googleapis.com/css?family=Roboto:300,400,500,700"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/tachyons@4.10.0/css/tachyons.min.css"
+    />
+  </head>
+
+  <body>
+        <!-- JS vendor -->
+        <script src="../dist/js/poncho-vendor.min.js?v=3"></script>
+
+        <!-- Templates -->
+        <script src="../dist/js/templates.js?v=3"></script>
+    
+        <!-- JS -->
+        <script src="../dist/js/poncho.min.js?v=3"></script>
+
+    <div id="container">
+      <h1>Canvas to Gif</h1>
+
+      <div class="mw9 center ph3-ns">
+        <div class="cf ph2-ns">
+          <div class="fl w-100 w-50-ns pa2">
+            <h2>Canvas</h2>
+            <div class="outline bg-white pv4"><canvas id="meme_canvas"></canvas></div>
+          </div>
+          <div class="fl w-100 w-50-ns pa2">
+            <h2>Gif</h2>
+            <div class="outline bg-white pv4"><img /></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- GIF.js code -->
+    <script src="gif.js"></script>
+    <script src="gif.worker.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
+

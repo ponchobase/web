@@ -4,6 +4,8 @@ var poncho_json = {
 
     // Meme generator
     meme_canvas: "",
+    meme_canvas_two: "",
+    meme_canvas_timeout: "",
     template: "with_sign",
 
     // Messages
