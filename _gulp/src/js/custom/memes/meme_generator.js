@@ -230,8 +230,8 @@ function create_meme(template) {
         // Add image to canvas
         fabric.Image.fromURL("/dist/img/memes/templates/" + template + ".png?v=3").then((image) => {
             // Set fabric dimensions to match image
-            poncho_json.meme_canvas.setHeight(image.width);
-            poncho_json.meme_canvas.setWidth(image.height);
+            poncho_json.meme_canvas.setHeight(image.height);
+            poncho_json.meme_canvas.setWidth(image.width);
 
             // Set attributes
             image.set({
@@ -301,7 +301,7 @@ function create_meme(template) {
                     left: image.width / 1.315,
                     originX: "center",
                     textAlign: "center",
-                    top: image.height / 1.68,
+                    top: image.height / 1.53,
                     width: image.width / 3
                 });
             } else {
