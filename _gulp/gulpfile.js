@@ -66,7 +66,6 @@ gulp.task("dist-js", () => {
         "./src/js/custom/_common/swipers.js",
         "./src/js/custom/_common/token.js",
         // Memes
-        "./src/js/custom/memes/add_gif.js",
         "./src/js/custom/memes/meme_generator.js"
     ])
         .pipe(concat("poncho.min.js"))
