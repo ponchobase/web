@@ -281,6 +281,29 @@ function create_meme(template) {
                     top: image.height / 13.5,
                     width: image.width / 4
                 });
+            } else if (template == "drake_hotline_bling") {
+                // Textbox
+                var text_object = new fabric.Textbox("Poncho\nHate", {
+                    fontFamily: "pricedown",
+                    fontSize: image.height / 13,
+                    id: 3,
+                    left: image.width / 1.315,
+                    originX: "center",
+                    textAlign: "center",
+                    top: image.height / 7,
+                    width: image.width / 3
+                });
+
+                var text_object_two = new fabric.Textbox("Poncho\nLike", {
+                    fontFamily: "pricedown",
+                    fontSize: image.height / 13,
+                    id: 3,
+                    left: image.width / 1.315,
+                    originX: "center",
+                    textAlign: "center",
+                    top: image.height / 1.69,
+                    width: image.width / 3
+                });
             } else {
                 // Textbox
                 var text_object = new fabric.Textbox("Create Your\nPoncho Meme", {
@@ -299,6 +322,12 @@ function create_meme(template) {
             poncho_json.meme_canvas.add(text_object);
             // poncho_json.meme_canvas.centerObjectH(text_object);
             poncho_json.meme_canvas.setActiveObject(text_object);
+
+            // Check if
+            if(text_object_two){
+                // Add text
+                poncho_json.meme_canvas.add(text_object_two);
+            }
         });
     } catch (e) {
         // console.error(e);

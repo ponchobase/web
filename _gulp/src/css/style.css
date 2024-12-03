@@ -1245,6 +1245,7 @@ section {
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 .meme_generator .right .gallery .template-button {
+  background: none;
   border-radius: 5px;
   margin: 0;
   padding: 0;
