@@ -1252,14 +1252,14 @@ section {
 }
 .meme_generator .right .gallery .inner .template-button {
   aspect-ratio: 1;
-  background: none;
-  border-radius: 5px;
+  background: var(--poncho_white);
+  border-radius: 0;
   height: 100%;
   margin: 0;
   padding: 0;
   width: 100%;
 }
-.meme_generator .right .gallery .inner .template-button.active {
+.meme_generator .right .gallery .inner .template-button.active img {
   border: 5px solid var(--poncho_green);
 }
 .meme_generator .right .gallery .inner .template-button img {
@@ -1283,7 +1283,7 @@ section {
   .meme_generator .right .gallery .inner {
     grid-gap: 7.5px;
   }
-  .meme_generator .right .gallery .inner .template-button.active {
+  .meme_generator .right .gallery .inner .template-button.active img {
     border: 3px solid var(--poncho_green);
   }
 }
@@ -1291,7 +1291,7 @@ section {
   .meme_generator .right .gallery .inner {
     grid-gap: 5px;
   }
-  .meme_generator .right .gallery .inner .template-button.active {
+  .meme_generator .right .gallery .inner .template-button.active img {
     border: 2px solid var(--poncho_green);
   }
 }

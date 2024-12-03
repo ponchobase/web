@@ -93,15 +93,17 @@
 
                 .template-button {
                     aspect-ratio: 1;
-                    background: none;
-                    border-radius: 5px;
+                    background: var(--poncho_white);
+                    border-radius: 0;
                     height: 100%;
                     margin: 0;
                     padding: 0;
                     width: 100%;
 
                     &.active {
-                        border: 5px solid var(--poncho_green);
+                        img {
+                            border: 5px solid var(--poncho_green);
+                        }
                     }
 
                     img {
@@ -156,7 +158,9 @@
 
                     .template-button {
                         &.active {
-                            border: 3px solid var(--poncho_green);
+                            img {
+                                border: 3px solid var(--poncho_green);
+                            }
                         }
                     }
                 }
@@ -174,7 +178,9 @@
 
                     .template-button {
                         &.active {
-                            border: 2px solid var(--poncho_green);
+                            img {
+                                border: 2px solid var(--poncho_green);
+                            }
                         }
                     }
                 }
