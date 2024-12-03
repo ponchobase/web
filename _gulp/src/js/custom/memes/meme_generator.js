@@ -227,8 +227,20 @@ function create_meme(template) {
         // Set
         poncho_json.template = template;
 
+        // Check if
+        if (template == "truck") {
+            var extension = "gif";
+
+            var tempImg = document.createElement("img");
+            tempImg.setAttribute("src", "/dist/img/memes/templates/" + template + "." + extension + "?v=3");
+            tempImg.setAttribute("height", "0px");
+            document.body.appendChild(tempImg);
+        } else {
+            var extension = "png";
+        }
+
         // Add image to canvas
-        fabric.Image.fromURL("/dist/img/memes/templates/" + template + ".png?v=3").then((image) => {
+        fabric.Image.fromURL("/dist/img/memes/templates/" + template + "." + extension + "?v=3").then((image) => {
             // Set fabric dimensions to match image
             poncho_json.meme_canvas.setHeight(image.height);
             poncho_json.meme_canvas.setWidth(image.width);
@@ -304,6 +316,18 @@ function create_meme(template) {
                     top: image.height / 1.53,
                     width: image.width / 3
                 });
+            } else if (template == "truck") {
+                // Textbox
+                var text_object = new fabric.Textbox("Create Your\nPoncho Meme", {
+                    fontFamily: "pricedown",
+                    fontSize: image.height / 13,
+                    id: 3,
+                    left: image.width / 1.282,
+                    originX: "center",
+                    textAlign: "center",
+                    top: image.height / 13.5,
+                    width: image.width / 4
+                });
             } else {
                 // Textbox
                 var text_object = new fabric.Textbox("Create Your\nPoncho Meme", {
@@ -324,7 +348,7 @@ function create_meme(template) {
             poncho_json.meme_canvas.setActiveObject(text_object);
 
             // Check if
-            if(text_object_two){
+            if (text_object_two) {
                 // Add text
                 poncho_json.meme_canvas.add(text_object_two);
             }
