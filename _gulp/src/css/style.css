@@ -1247,7 +1247,7 @@ section {
 .meme_generator .right .gallery .inner {
   display: grid;
   grid-gap: 10px;
-  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(20%, 1fr));
   overflow: hidden;
 }
 .meme_generator .right .gallery .inner .template-button {
@@ -1283,7 +1283,6 @@ section {
 @media screen and (max-width: 768px) {
   .meme_generator .right .gallery .inner {
     grid-gap: 7.5px;
-    grid-template-columns: repeat(auto-fit, minmax(75px, 1fr));
   }
   .meme_generator .right .gallery .inner .template-button.active img {
     border: 3px solid var(--poncho_green);
@@ -1292,7 +1291,6 @@ section {
 @media screen and (max-width: 480px) {
   .meme_generator .right .gallery .inner {
     grid-gap: 5px;
-    grid-template-columns: repeat(auto-fit, minmax(65px, 1fr));
   }
   .meme_generator .right .gallery .inner .template-button.active img {
     border: 2px solid var(--poncho_green);

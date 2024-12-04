@@ -88,7 +88,7 @@
             .inner {
                 display: grid;
                 grid-gap: 10px;
-                grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+                grid-template-columns: repeat(auto-fit, minmax(20%, 1fr));
                 overflow: hidden;
 
                 .template-button {
@@ -156,7 +156,6 @@
             .gallery {
                 .inner {
                     grid-gap: 7.5px;
-                    grid-template-columns: repeat(auto-fit, minmax(75px, 1fr));
 
                     .template-button {
                         &.active {
@@ -177,8 +176,6 @@
             .gallery {
                 .inner {
                     grid-gap: 5px;
-                    grid-template-columns: repeat(auto-fit, minmax(65px, 1fr));
-
                     .template-button {
                         &.active {
                             img {
