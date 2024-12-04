@@ -1240,7 +1240,7 @@ section {
   max-width: 100%;
 }
 .meme_generator .right .gallery {
-  max-height: 50vh;
+  max-height: 30vh;
   overflow: hidden;
   overflow-y: auto;
 }

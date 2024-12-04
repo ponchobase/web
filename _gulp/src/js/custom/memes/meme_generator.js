@@ -8,8 +8,8 @@ function init_meme_generator() {
         // Create meme
         create_meme("with_sign");
 
-        // // Load assets
-        // load_assets();
+        // Load assets
+        load_assets();
 
         // On click - reset
         $(selector_meme_generator + " .reset").off("click");
@@ -364,7 +364,7 @@ function load_assets() {
             success: function (data) {
                 $(data).find("a").attr("href", function (i, val) {
                     if (val.match(/\.(jpe?g|png|gif)$/)) {
-                        $("body").append("<img src='" + folder + val + "'>");
+                        $(".assets .gallery .inner").append('<button class="template-button" data-template="with_sign"><img src="' + folder + val + '" loading="lazy"></button>');
                     }
                 });
             }
