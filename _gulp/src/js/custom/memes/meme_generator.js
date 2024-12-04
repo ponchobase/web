@@ -333,8 +333,9 @@ function create_meme(template) {
                     id: 1,
                     left: image.width / 2,
                     originX: "center",
+                    originY: "center",
                     textAlign: "center",
-                    top: image.height / 6,
+                    top: image.height / 2,
                     width: image.width / 1.5
                 });
             }
