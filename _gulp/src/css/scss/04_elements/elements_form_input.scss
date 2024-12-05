@@ -55,7 +55,10 @@ select {
     margin: 0 0 20px;
     padding: 10px;
     width: 100%;
- 
+
+    &:focus-visible {
+        outline-offset: -1px;
+    }
 }
 
 // <optgroup> Defines a group of related options in a drop-down list
