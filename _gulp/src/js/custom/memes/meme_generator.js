@@ -5,18 +5,18 @@ function init_meme_generator() {
         var selector_modal_memes = "[data-modal=memes]";
         var selector_meme_generator = selector_modal_memes + " .meme_generator";
 
-        // Create meme
-        create_meme("with_sign");
+        // Add template
+        add_template("with_sign");
 
         // Load assets
-        load_assets();
+        load_assets("1_Fur");
 
         // On click - reset
         $(selector_meme_generator + " .reset").off("click");
         $(selector_meme_generator + " .reset").on("click", function () {
             try {
-                // Create meme
-                create_meme(poncho_json.template);
+                // Add template
+                add_template(poncho_json.template);
 
                 // Show messages
                 show_messages(poncho_json.messages.reset.success);
@@ -161,7 +161,7 @@ function init_meme_generator() {
             }
         });
 
-        // On click - select templte
+        // On click - select template
         $(selector_meme_generator + " .template-button").off("click");
         $(selector_meme_generator + " .template-button").on("click", function () {
             try {
@@ -174,18 +174,55 @@ function init_meme_generator() {
                 // Vars
                 var template = $(this).attr("data-template");
 
-                // Create meme
-                create_meme(template);
+                // Add template
+                add_template(template);
             } catch (e) {
                 // console.error(e);
             }
+        });
+
+        // On change - asset type
+        $(selector_meme_generator + " .asset-type").off("change");
+        $(selector_meme_generator + " .asset-type").on("change", function () {
+            // Vars
+            var asset_type = $(this).val();
+
+            // Load assets
+            load_assets(asset_type)
         });
     } catch (e) {
         // console.error(e);
     }
 }
 
-function create_meme(template) {
+function add_image(image_src) {
+    try {
+        // Add image to canvas
+        fabric.Image.fromURL(image_src).then((image) => {
+            // Set fabric dimensions to match image
+            poncho_json.meme_canvas.setHeight(image.height);
+            poncho_json.meme_canvas.setWidth(image.width);
+
+            // Set attributes
+            image.set({
+                hasControls: true,
+                hoverCursor: "auto",
+                id: 1,
+                selectable: true,
+            });
+
+            // Add image
+            poncho_json.meme_canvas.add(image);
+
+            // Set active
+            poncho_json.meme_canvas.setActiveObject(image);
+        });
+    } catch (e) {
+        // console.error(e);
+    }
+}
+
+function add_template(template) {
     try {
         // Vars
         var selector_modal_memes = "[data-modal=memes]";
@@ -356,23 +393,51 @@ function create_meme(template) {
     }
 }
 
-function load_assets() {
+function load_assets(asset_type) {
     try {
-        // var folder = "/dist/img/memes/assets/1_Poncho/";
-        // var folder = "/dist/img/memes/assets/2_Fur/";
-        // var folder = "/dist/img/memes/assets/3_Accessories/";
-        // var folder = "/dist/img/memes/assets/4_Eyebrows/";
-        // var folder = "/dist/img/memes/assets/5_Mouth/";
-        // var folder = "/dist/img/memes/assets/6_Eyes/";
-        var folder = "/dist/img/memes/assets/7_Hat/";
-        // var folder = "/dist/img/memes/assets/8_Object/";
+        // Check if
+        if (!asset_type) {
+            // Vars
+            asset_type = "1_Fur";
+        }
+        // Vars
+        var selector_modal_memes = "[data-modal=memes]";
+        var selector_meme_generator = selector_modal_memes + " .meme_generator";
+        var folder = "/dist/img/memes/assets/" + asset_type + "/";
 
+        // Get folder
         $.ajax({
             url: folder,
             success: function (data) {
-                $(data).find("a").attr("href", function (i, val) {
-                    if (val.match(/\.(jpe?g|png|gif)$/)) {
-                        $(".assets .gallery .inner").append('<button class="template-button" data-template="with_sign"><img src="' + folder + val + '" loading="lazy"></button>');
+                // Check if
+                if (data) {
+                    // Empty
+                    $(".assets .gallery .inner").empty();
+
+                    // Loop
+                    $(data).find("a").attr("href", function (i, val) {
+                        // Check if
+                        if (val.match(/\.(jpe?g|png|gif)$/)) {
+                            // Vars
+                            var gallery_string = '<button class="asset-button" data-template="with_sign"><img src="' + folder + val + '" loading="lazy"></button>';
+
+                            // Append
+                            $(selector_meme_generator + " .assets .gallery .inner").append(gallery_string);
+                        }
+                    });
+                }
+
+                // On click - select asset
+                $(selector_meme_generator + " .asset-button").off("click");
+                $(selector_meme_generator + " .asset-button").on("click", function () {
+                    try {
+                        // Vars
+                        var image = $(this).find("img").attr("src");
+
+                        // Add image
+                        add_image(image);
+                    } catch (e) {
+                        // console.error(e);
                     }
                 });
             }
