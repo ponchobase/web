@@ -360,9 +360,11 @@ function load_assets() {
     try {
         // var folder = "/dist/img/memes/assets/1_Poncho/";
         // var folder = "/dist/img/memes/assets/2_Fur/";
-        var folder = "/dist/img/memes/assets/3_Accessories/";
+        // var folder = "/dist/img/memes/assets/3_Accessories/";
         // var folder = "/dist/img/memes/assets/4_Eyebrows/";
         // var folder = "/dist/img/memes/assets/5_Mouth/";
+        // var folder = "/dist/img/memes/assets/6_Eyes/";
+        var folder = "/dist/img/memes/assets/7_Hat/";
         // var folder = "/dist/img/memes/assets/8_Object/";
 
         $.ajax({
