@@ -46,6 +46,18 @@ button,
 }
 
 // <select>	Defines a drop-down list
+select {
+    background: var(--poncho_blue);
+    border: 2px solid var(--poncho_white);
+    border-radius: 5px;
+    color: var(--poncho_white);
+    cursor: pointer;
+    margin: 0 0 20px;
+    padding: 10px;
+    width: 100%;
+ 
+}
+
 // <optgroup> Defines a group of related options in a drop-down list
 // <option>	Defines an option in a drop-down list
 // <fieldset> Groups related elements in a form

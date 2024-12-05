@@ -485,6 +485,17 @@ button:hover,
   color: var(--poncho_white);
 }
 
+select {
+  background: var(--poncho_blue);
+  border: 2px solid var(--poncho_white);
+  border-radius: 5px;
+  color: var(--poncho_white);
+  cursor: pointer;
+  margin: 0 0 20px;
+  padding: 10px;
+  width: 100%;
+}
+
 /************************  *************************/
 /* 	       Forms & Inputs - Mobile   	       	   */
 /************************  *************************/
