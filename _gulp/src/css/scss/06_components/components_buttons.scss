@@ -21,17 +21,6 @@
         }
     }
 
-    &--blue-inverse {
-        background: var(--poncho_blue);
-        border: 2px solid var(--poncho_white);
-        color: var(--poncho_white);
-
-        &:hover {
-            background: var(--poncho_blue_hover);
-            color: var(--poncho_white);
-        }
-    }
-
     &--green-inverse {
         background: var(--poncho_blue);
         border: 2px solid var(--poncho_white);
