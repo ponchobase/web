@@ -108,6 +108,9 @@
                                 <button class="button button--blue shape" type="button" title="Add Shape"><i class="fa-solid fa-shapes"></i></button>
                             </div>
 
+                            <input type="file" onchange="previewFile()" /><br />
+                            <img src="" height="200" alt="Image preview" />
+
                             <!-- Accordions -->
                             <div class="row accordions margin--none-auto">
                                 <!-- Accordions container -->
@@ -131,6 +134,11 @@
                                                 <div class="gallery">
                                                     <!-- Inner -->
                                                     <div class="inner">
+                                                        <!-- Upload image -->
+                                                        <button class="template-button upload" type="button" title="Upload Image">
+                                                            <i class="fa-solid fa-image"></i>
+                                                        </button>
+
                                                         <!-- With sign -->
                                                         <button class="template-button active" data-template="with_sign" type="button" title="With Sign">
                                                             <img src="/dist/img/memes/templates/small/with_sign.png?v=3" alt="With Sign" loading="lazy">
