@@ -278,7 +278,7 @@ function init_left_top_tools() {
                 add_template(poncho_json.template);
 
                 // Show messages
-                show_messages(poncho_json.messages.reset.success);
+                show_messages(poncho_json.messages.meme_generator.reset.success);
             } catch (e) {
                 // console.error(e);
             }
@@ -295,7 +295,7 @@ function init_left_top_tools() {
                 set_active_object(2);
 
                 // Show messages
-                show_messages(poncho_json.messages.edit.success);
+                show_messages(poncho_json.messages.meme_generator.edit.success);
             } catch (e) {
                 // console.error(e);
             }
@@ -327,7 +327,7 @@ function init_left_top_tools() {
                     $(selector_meme_generator + " .meme").append(image);
 
                     // Show messages
-                    show_messages(poncho_json.messages.save.success);
+                    show_messages(poncho_json.messages.meme_generator.save.success);
                 });
             } catch (e) {
                 // console.error(e);
@@ -373,7 +373,7 @@ function init_left_top_tools() {
                     set_active_object(active_id);
 
                     // Show messages
-                    show_messages(poncho_json.messages.download.success);
+                    show_messages(poncho_json.messages.meme_generator.download.success);
                 });
             } catch (e) {
                 // console.error(e);
@@ -563,43 +563,57 @@ function set_active_object(active_id) {
     }
 }
 
-function upload_image() {
+function upload_image(e) {
     try {
-        const file = document.querySelector("input[type=file]").files[0];
-        const reader = new FileReader();
+        // Vars
+        var file = e.currentTarget.files[0];
 
-        reader.addEventListener(
-            "load",
-            () => {
-                // Image
-                fabric.Image.fromURL(reader.result).then((image) => {
-                    // Set attributes
-                    image.set({
-                        hasControls: true,
-                        hoverCursor: "auto",
-                        id: 1,
-                        left: poncho_json.meme_canvas.width / 2,
-                        originX: "center",
-                        originY: "center",
-                        id: 1,
-                        selectable: true,
-                        textAlign: "center",
-                        top: poncho_json.meme_canvas.height / 2
-                    });
+        // File reader
+        var reader = new FileReader();
 
-                    // Add image
-                    image.scaleToHeight(poncho_json.meme_canvas.height / 2);
-                    image.scaleToWidth(poncho_json.meme_canvas.width / 2);
-                    poncho_json.meme_canvas.add(image);
-                    poncho_json.meme_canvas.setActiveObject(image);
+        // Fired when a read has completed, successfully or not.
+        reader.onloadend = function () {
+            // Image
+            fabric.Image.fromURL(reader.result).then((image) => {
+                // Set attributes
+                image.set({
+                    hasControls: true,
+                    hoverCursor: "auto",
+                    id: 1,
+                    left: poncho_json.meme_canvas.width / 2,
+                    originX: "center",
+                    originY: "center",
+                    id: 1,
+                    selectable: true,
+                    textAlign: "center",
+                    top: poncho_json.meme_canvas.height / 2
                 });
-            },
-            false,
-        );
 
-        if (file) {
-            reader.readAsDataURL(file);
+                // Add image
+                image.scaleToHeight(poncho_json.meme_canvas.height / 2);
+                image.scaleToWidth(poncho_json.meme_canvas.width / 2);
+                poncho_json.meme_canvas.add(image);
+                poncho_json.meme_canvas.setActiveObject(image);
+            });
         }
+
+        // Fired when the read failed due to an error.
+        reader.onerror = function () {
+            // Show messages
+            show_messages(poncho_json.messages.meme_generator.image_upload.error);
+        }
+
+        // Check if
+        if (file && (/\.(jpe?g|png)$/i.test(file.name))) {
+            // Read the contents of the specified Blob or File
+            reader.readAsDataURL(file);
+        } else {
+            // Show messages
+            show_messages(poncho_json.messages.meme_generator.image_upload.error);
+        }
+
+        // Clear
+        $(e.currentTarget).val("");
     } catch (e) {
         // console.error(e);
     }
