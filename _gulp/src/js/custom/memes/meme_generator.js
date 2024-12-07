@@ -16,6 +16,19 @@ function init_meme_generator() {
         // Init right top tools
         init_right_top_tools();
 
+        // On click - select template transparent
+        $(selector_meme_generator + " [name=template-transparent]").off("change");
+        $(selector_meme_generator + " [name=template-transparent]").on("change", function () {
+            // Check if
+            if (this.checked) {
+                // Add template
+                add_template("Transparent");
+            } else {
+                // Add template
+                add_template("with_sign");
+            }
+        });
+
         // On click - select template
         $(selector_meme_generator + " .template-button").off("click");
         $(selector_meme_generator + " .template-button").on("click", function () {
@@ -54,10 +67,6 @@ function add_image(image_src) {
     try {
         // Add image to canvas
         fabric.Image.fromURL(image_src).then((image) => {
-            // Set fabric dimensions to match image
-            poncho_json.meme_canvas.setHeight(image.height);
-            poncho_json.meme_canvas.setWidth(image.width);
-
             // Set attributes
             image.set({
                 hasControls: true,
@@ -67,6 +76,8 @@ function add_image(image_src) {
             });
 
             // Add image
+            image.scaleToHeight(poncho_json.meme_canvas.height);
+            image.scaleToWidth(poncho_json.meme_canvas.width);
             poncho_json.meme_canvas.add(image);
 
             // Set active
