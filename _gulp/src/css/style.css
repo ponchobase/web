@@ -1214,6 +1214,7 @@ section {
   width: 100%;
 }
 .meme_generator .left .meme canvas {
+  border: 2px dotted var(--poncho_white);
   float: left;
   width: 100%;
   width: 100% !important;
@@ -1245,12 +1246,12 @@ section {
   display: inline-block;
 }
 .meme_generator .right .top .image input {
-  width: 100%;
   height: 100%;
+  left: 0;
   position: absolute;
   top: 0;
-  left: 0;
   visibility: hidden;
+  width: 100%;
 }
 .meme_generator .right .accordions {
   max-width: 100%;
@@ -1285,6 +1286,25 @@ section {
   cursor: pointer;
   height: 100%;
   object-fit: contain;
+  width: 100%;
+}
+.meme_generator .right .templates .upload {
+  border-radius: 5px;
+  margin: 0;
+  padding: 0;
+}
+.meme_generator .right .templates .upload i {
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+.meme_generator .right .templates .upload input {
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  visibility: hidden;
   width: 100%;
 }
 

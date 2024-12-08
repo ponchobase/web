@@ -133,19 +133,19 @@
                                             <div class="templates">
                                                 <!-- Gallery -->
                                                 <div class="gallery">
-                                                    <!-- No template -->
+                                                    <!-- Transparent template -->
                                                     <label for="template_transparent">
-                                                        <input class="programs-checked" id="template_transparent" name="template_transparent" type="checkbox" value="No Template">
-                                                        <span class="checkmark"></span>
-                                                        <span>No template</span>
+                                                        <input class="programs-checked" id="template_transparent" name="template_transparent" type="checkbox" value="Transparent Template">
+                                                        <span>Transparent template</span>
                                                     </label>
 
                                                     <!-- Inner -->
                                                     <div class="inner">
-                                                        <!-- Upload image -->
-                                                        <button class="template-button upload" type="button" title="Upload Image">
-                                                            <i class="fa-solid fa-image"></i>
-                                                        </button>
+                                                        <!-- Upload template -->
+                                                        <label class="button button--blue upload" type="button" title="Upload Template">
+                                                            <input type="file" onchange="upload_template(event)">
+                                                            <i class="fa-solid fa-upload"></i>
+                                                        </label>
 
                                                         <!-- With sign -->
                                                         <button class="template-button active" data-template="with_sign" type="button" title="With Sign">
@@ -271,7 +271,7 @@
                                     </div>
 
                                     <!-- Accordion -->
-                                    <div class="accordion margin--none">
+                                    <div class="accordion margin--none manage-layers">
                                         <!-- Header -->
                                         <h3 class="accordion__header">
                                             <!-- Trigger -->

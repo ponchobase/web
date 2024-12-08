@@ -13,8 +13,12 @@ poncho_json.messages = {
         save: {
             success: `<p><i class="fas fa-check font--green"></i> Poncho meme saved.</p>`
         },
-        image_upload: {
+        upload_iamge: {
             error: `<p><i class="fas fa-times font--red"></i> Error uploading image.</p>
+                <p class="font--small">Note: Only JPG/JPEG and PNG file formats supported.</p>`
+        },
+        upload_template: {
+            error: `<p><i class="fas fa-times font--red"></i> Error uploading template.</p>
                 <p class="font--small">Note: Only JPG/JPEG and PNG file formats supported.</p>`
         }
     }
