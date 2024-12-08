@@ -236,6 +236,14 @@
     .xs-hide {
         display: none;
     }
+
+    .xs-margin {
+        &--none {
+            &-right {
+                margin-right: 0 !important;
+            }
+        }
+    }
 }
 
 // @include media("xxs") {}
