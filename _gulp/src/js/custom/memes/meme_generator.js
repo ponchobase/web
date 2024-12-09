@@ -5,7 +5,7 @@ function init_meme_generator() {
         var selector_meme_generator = selector_modal_memes + " .meme_generator";
 
         // Add template
-        add_template("with_sign");
+        add_template("With_Sign");
 
         // Load asset
         load_asset("1_Fur");
@@ -131,7 +131,7 @@ function add_template(template) {
         // Check if
         if (!check_value_defined(template)) {
             // Vars
-            template = "with_sign";
+            template = "With_Sign";
         }
 
         // Set
@@ -488,15 +488,16 @@ function init_right_top_tools() {
 
 function load_asset(asset_type) {
     try {
+        // Vars
+        var selector_modal_memes = "[data-modal=memes]";
+        var selector_meme_generator = selector_modal_memes + " .meme_generator";
+        var folder = "/dist/img/memes/assets/" + asset_type + "/";
+
         // Check if
         if (!asset_type) {
             // Vars
             asset_type = "1_Fur";
         }
-        // Vars
-        var selector_modal_memes = "[data-modal=memes]";
-        var selector_meme_generator = selector_modal_memes + " .meme_generator";
-        var folder = "/dist/img/memes/assets/" + asset_type + "/";
 
         // Get folder
         $.ajax({
@@ -565,6 +566,10 @@ function set_active_object(active_id) {
 function upload_image(e) {
     try {
         // Vars
+        var selector_modal_memes = "[data-modal=memes]";
+        var selector_meme_generator = selector_modal_memes + " .meme_generator";
+
+        // File
         var file = e.currentTarget.files[0];
 
         // File reader
@@ -624,6 +629,10 @@ function upload_image(e) {
 function upload_template(e) {
     try {
         // Vars
+        var selector_modal_memes = "[data-modal=memes]";
+        var selector_meme_generator = selector_modal_memes + " .meme_generator";
+
+        // File
         var file = e.currentTarget.files[0];
 
         // File reader
@@ -631,10 +640,6 @@ function upload_template(e) {
 
         // Fired when a read has completed, successfully or not.
         reader.onloadend = function () {
-            // Vars
-            var selector_modal_memes = "[data-modal=memes]";
-            var selector_meme_generator = selector_modal_memes + " .meme_generator";
-
             // Remove
             $(selector_meme_generator + " .meme img").remove();
 
