@@ -52,6 +52,7 @@ gulp.task("dist-js", () => {
         // Json
         "./src/js/custom/_json/poncho.js",
         "./src/js/custom/_json/messages.js",
+        "./src/js/custom/_json/templates.js",
         // Init
         "./src/js/custom/initialize.js",
         // Common

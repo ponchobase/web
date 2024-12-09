@@ -4,6 +4,9 @@ function init_meme_generator() {
         var selector_modal_memes = "[data-modal=memes]";
         var selector_meme_generator = selector_modal_memes + " .meme_generator";
 
+        // Init templates
+        init_templates();
+
         // Add template
         add_template("With_Sign");
 
@@ -251,6 +254,37 @@ function add_template(template) {
                 // Add text
                 poncho_json.meme_canvas.add(text_object_two);
             }
+        });
+    } catch (e) {
+        // console.error(e);
+    }
+}
+
+function init_templates() {
+    try {
+        // Vars
+        var selector_modal_memes = "[data-modal=memes]";
+        var selector_meme_generator = selector_modal_memes + " .meme_generator";
+
+        // Folder
+        var folder = "/dist/img/memes/templates/_small/";
+
+        // Loop
+        $(poncho_json.templates).each(function (index, value) {
+            // Vars
+            var id = value.id;
+            var active = value.state;
+            var filename = value.filename;
+            var filename_array = filename.split(".");
+            var filename_title = filename_array[0];
+            filename_title = filename_title.replaceAll("_", " ");
+            filename_title = filename_title.replaceAll("&", " & ");
+
+            // Vars
+            var gallery_string = '<button class="template-button ' + active + '" data-tempalte-id="' + id + '" data-template="' + filename_array[0] + '"  type="button" title="' + filename_title + '"><img src="' + folder + filename + '" alt="' + filename_title + '" loading="lazy"></button>';
+
+            // Append
+            $(selector_meme_generator + " .templates .gallery .inner").append(gallery_string);
         });
     } catch (e) {
         // console.error(e);
@@ -513,13 +547,13 @@ function load_asset(asset_type) {
                         // Check if
                         if (val.match(/\.(jpe?g|png|gif)$/)) {
                             // Vars
-                            var filenameArray = val.split(".");
-                            var filename = filenameArray[0];
-                            filename = filename.replaceAll("_", " ");
-                            filename = filename.replaceAll("&", " & ");
+                            var filename_array = val.split(".");
+                            var filename_title = filename_array[0];
+                            filename_title = filename_title.replaceAll("_", " ");
+                            filename_title = filename_title.replaceAll("&", " & ");
 
                             // Vars
-                            var gallery_string = '<button class="asset-button" type="button" title="' + filename + '"><img src="' + folder + val + '" alt="' + filename + '" loading="lazy"></button>';
+                            var gallery_string = '<button class="asset-button" type="button" title="' + filename_title + '"><img src="' + folder + val + '" alt="' + filename_title + '" loading="lazy"></button>';
 
                             // Append
                             $(selector_meme_generator + " .assets .gallery .inner").append(gallery_string);
