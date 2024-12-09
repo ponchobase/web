@@ -16,19 +16,6 @@ function init_meme_generator() {
         // Init right top tools
         init_right_top_tools();
 
-        // On click - select template transparent
-        $(selector_meme_generator + " [name=template_transparent]").off("change");
-        $(selector_meme_generator + " [name=template_transparent]").on("change", function () {
-            // Check if
-            if (this.checked) {
-                // Add template
-                add_template("Transparent");
-            } else {
-                // Add template
-                add_template("with_sign");
-            }
-        });
-
         // On click - select template
         $(selector_meme_generator + " .template-button").off("click");
         $(selector_meme_generator + " .template-button").on("click", function () {
@@ -168,19 +155,19 @@ function add_template(template) {
             poncho_json.meme_canvas.add(image);
 
             // Check if
-            if (template == "with_sign") {
+            if (template == "With_Sign") {
                 // Textbox
                 var text_object = new fabric.Textbox("Create Your\nPoncho Meme", {
                     fontFamily: "pricedown",
                     fontSize: image.height / 10,
-                    id: 1,
+                    id: 2,
                     left: image.width / 2,
                     originX: "center",
                     textAlign: "center",
                     top: image.height / 6,
                     width: image.width / 1.5
                 });
-            } else if (template == "change_my_mind") {
+            } else if (template == "Change_My_Mind") {
                 // Textbox
                 var text_object = new fabric.Textbox("Create Your\nPoncho Meme", {
                     fontFamily: "pricedown",
@@ -192,24 +179,24 @@ function add_template(template) {
                     top: image.height / 1.515,
                     width: image.width / 2
                 });
-            } else if (template == "smart") {
+            } else if (template == "Smart") {
                 // Textbox
                 var text_object = new fabric.Textbox("Create Your\nPoncho Meme", {
                     fontFamily: "pricedown",
                     fontSize: image.height / 13,
-                    id: 3,
+                    id: 2,
                     left: image.width / 1.282,
                     originX: "center",
                     textAlign: "center",
                     top: image.height / 13.5,
                     width: image.width / 4
                 });
-            } else if (template == "drake_hotline_bling") {
+            } else if (template == "Drake_Hotline_Bling") {
                 // Textbox
                 var text_object = new fabric.Textbox("Poncho\nHate", {
                     fontFamily: "pricedown",
                     fontSize: image.height / 13,
-                    id: 3,
+                    id: 2,
                     left: image.width / 1.315,
                     originX: "center",
                     textAlign: "center",
@@ -220,19 +207,19 @@ function add_template(template) {
                 var text_object_two = new fabric.Textbox("Poncho\nLike", {
                     fontFamily: "pricedown",
                     fontSize: image.height / 13,
-                    id: 3,
+                    id: 2,
                     left: image.width / 1.315,
                     originX: "center",
                     textAlign: "center",
                     top: image.height / 1.53,
                     width: image.width / 3
                 });
-            } else if (template == "truck") {
+            } else if (template == "Truck") {
                 // Textbox
                 var text_object = new fabric.Textbox("Create Your\nPoncho Meme", {
                     fontFamily: "pricedown",
                     fontSize: image.height / 7,
-                    id: 3,
+                    id: 2,
                     left: image.width / 2.65,
                     originX: "center",
                     textAlign: "center",
@@ -244,7 +231,7 @@ function add_template(template) {
                 var text_object = new fabric.Textbox("Create Your\nPoncho Meme", {
                     fontFamily: "pricedown",
                     fontSize: image.height / 10,
-                    id: 1,
+                    id: 2,
                     left: image.width / 2,
                     originX: "center",
                     originY: "center",
