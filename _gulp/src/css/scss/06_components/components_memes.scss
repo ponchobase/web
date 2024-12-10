@@ -69,9 +69,7 @@
 
         .top {
             margin: 0 auto 15px;
-            overflow-x: auto;
             text-align: center;
-            white-space: nowrap;
 
             .button {
                 border-radius: 5px;
@@ -86,6 +84,28 @@
                     top: 0;
                     visibility: hidden;
                     width: 100%;
+                }
+            }
+
+            emoji-picker {
+                --background: var(--primary_white_light);
+                --border-color: var(--primary_grey_lightest);
+                --button-active-background: var(--primary_white_light);
+                --button-hover-background: var(--primary_white_light);
+                --indicator-color: var(--primary_blue);
+                --input-border-color: var(--primary_grey_lightest);
+                --input-font-color: var(--primary_dark_light);
+                --input-placeholder-color: var(--primary_grey);
+                --outline-color: none;
+                --num-columns: 9;
+                display: none;
+                margin: 5px 0;
+                min-width: 100%;
+                max-height: 30vh;
+                outline: none;
+
+                .picker {
+                    border-radius: 5px;
                 }
             }
         }
@@ -136,7 +156,7 @@
                 border-radius: 5px;
                 margin: 0;
                 padding: 0;
-                
+
                 i {
                     left: 50%;
                     position: absolute;

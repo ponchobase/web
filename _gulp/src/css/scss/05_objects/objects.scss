@@ -138,6 +138,11 @@
         overflow-x: auto;
         white-space: nowrap;
     }
+
+    &--y {
+        overflow-y: auto;
+        white-space: nowrap;
+    }
 }
 
 .no-wrap {

@@ -703,6 +703,10 @@ section {
   overflow-x: auto;
   white-space: nowrap;
 }
+.overflow--y {
+  overflow-y: auto;
+  white-space: nowrap;
+}
 
 .no-wrap {
   white-space: nowrap;
@@ -1240,9 +1244,7 @@ section {
 }
 .meme_generator .right .top {
   margin: 0 auto 15px;
-  overflow-x: auto;
   text-align: center;
-  white-space: nowrap;
 }
 .meme_generator .right .top .button {
   border-radius: 5px;
@@ -1255,6 +1257,26 @@ section {
   top: 0;
   visibility: hidden;
   width: 100%;
+}
+.meme_generator .right .top emoji-picker {
+  --background: var(--primary_white_light);
+  --border-color: var(--primary_grey_lightest);
+  --button-active-background: var(--primary_white_light);
+  --button-hover-background: var(--primary_white_light);
+  --indicator-color: var(--primary_blue);
+  --input-border-color: var(--primary_grey_lightest);
+  --input-font-color: var(--primary_dark_light);
+  --input-placeholder-color: var(--primary_grey);
+  --outline-color: none;
+  --num-columns: 9;
+  display: none;
+  margin: 5px 0;
+  min-width: 100%;
+  max-height: 30vh;
+  outline: none;
+}
+.meme_generator .right .top emoji-picker .picker {
+  border-radius: 5px;
 }
 .meme_generator .right .accordions {
   max-width: 100%;
@@ -1455,7 +1477,7 @@ section {
   display: flex;
   flex-direction: column;
   margin: 25px auto;
-  max-width: 1380px;
+  max-width: 1330px;
   overflow: hidden;
   overflow-y: auto;
   position: relative;
